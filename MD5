@@ -1,4 +1,4 @@
-080237201cdcea63604eeed8d58e3cf9 *DESCRIPTION
+372c98f19fa4aa9b642f7c7a9d9c9c38 *DESCRIPTION
 b470404bbe7a6867cc8911696420599c *NAMESPACE
 b1acbcbc3d95e7ed3429e45932576bab *NEWS
 5e199f7bdb3b2dac728d499af72a66cd *R/aa123.R
@@ -135,7 +135,7 @@ d36bd215d9fc19dee5911ff92cd429ee *R/print.enma.R
 b0dc473b549c4d62c4c21a4261266536 *R/prune.cna.R
 cdce6f66020e6d56eeca5e5662cad5ce *R/read.all.R
 110a073d27ab0947b53ab95279a62d18 *R/read.crd.R
-55aae02ec80f2fc846f578451f9267f6 *R/read.dcd.R
+1fbaaca629b724cc51e53e9090eafb42 *R/read.dcd.R
 952421f3b6bf1d8f768ed8666c801e03 *R/read.fasta.R
 a5db9a8fed985366cca42ada6842982d *R/read.fasta.pdb.R
 c9860f51f89157b7f1fc3d2486f18b99 *R/read.mol2.R
@@ -183,7 +183,7 @@ f7ec0b5657fb192ad6876aaa02999ff3 *R/write.fasta.R
 c5869d73f1056b1c17354a41133de04d *R/write.pqr.R
 9e57938c5fa7ce30265b29e8750f4810 *R/xyz2atom.R
 d6417ea8b3696a4c9fbc8cb45992d0e2 *README.md
-5ca105cbc83226e3313a05b290d519b4 *build/vignette.rds
+64758af1d69c4ce66839d99a7994f686 *build/vignette.rds
 b4187321783b82378e3f9be255107088 *data/aa.index.rda
 cc5c543b6bc23991f0d43a6225a57e42 *data/aa.mass.rda
 3ecede6fe9737508db5b4b25d6999ebe *data/atom.index.rda
@@ -198,8 +198,8 @@ e00cfaf42f407e3d4b8b5b248a62cad9 *data/transducin.RData
 37555f4c7b54f97ed5466b49a958a176 *demo/pca.R
 b7e58ea62baf621f669d3afd84de90f2 *demo/pdb.R
 e180e37c6fb6f2438270c912943331d1 *inst/CITATION
-ed3bf7e59ba7b7fa1bbf69ea28b8d608 *inst/doc/bio3d_vignettes.Rmd
-a90fb2395d75e8582767d6b76560313d *inst/doc/bio3d_vignettes.html
+491a55ef7caef842ab6229df896c6400 *inst/doc/bio3d_vignettes.Rmd
+9cc1b8aa6adff34393a64336e8fb6b96 *inst/doc/bio3d_vignettes.html
 ea4074c1ad01d8237901b03688f91fec *inst/examples/1dpx.pdb
 83ea2593e2c4021492c564f437f0072f *inst/examples/1hel.pdb
 62d8e838c149a5fb165c4d3fd44069fe *inst/examples/hivp.dcd
@@ -229,7 +229,7 @@ e709a80e58d2f594ac61030021ed1f07 *man/atom.select.Rd
 7e752beacb85941f5ef50ee69a8dc7da *man/atom2xyz.Rd
 611418da9726301a316de71917e6a76c *man/bhattacharyya.Rd
 f2b2df43a0db795df2f86bd4572dc544 *man/binding.site.Rd
-b541668dc59ccc028a92c46e530c80ef *man/bio3d.package.Rd
+6f1406960f9fb4561b095d498c4bd95f *man/bio3d.package.Rd
 c2a2cf0d50b00303af65973362de6775 *man/blast.pdb.Rd
 9ca205b70db6da407022e6e8e3df592b *man/bounds.Rd
 286d14495584846ddf5ab3c5ab000bec *man/bwr.colors.Rd
@@ -252,7 +252,7 @@ a65643f7bb28b0e02237420c46c79766 *man/dccm.enma.Rd
 d5ffaa57f4f39ed9bc221ea6a414fcca *man/dccm.nma.Rd
 1132f55c8f65addd465e41f6a80caadc *man/dccm.pca.Rd
 ce6238942ed5672e8e9de2bd34291326 *man/dccm.xyz.Rd
-a0f778172dc93ff1ffef45362e51fa28 *man/deformation.nma.Rd
+989cb29aded6d82323ef05e9e91ce379 *man/deformation.nma.Rd
 c923b626ecfa0810c4ed642ec372cb8a *man/diag.ind.Rd
 bef565376843050942ec68c190fa885b *man/difference.vector.Rd
 da98775d8cdc354ae78933e7e56174ea *man/dist.xyz.Rd
@@ -283,12 +283,12 @@ b70ea5b1c25fdc58287a5a2f92f507a1 *man/is.pdb.Rd
 f2cd959d3b0bd3cd16ddff0f00318276 *man/is.xyz.Rd
 475e283871a63739189ba15f51176bf5 *man/layout.cna.Rd
 060c0199ec1ba752ab79d7a43456209c *man/lbio3d.Rd
-dda1c3e71934608c443ac2416f15966a *man/lmi.Rd
+d6d66677d5f127ad27fb2bd37b9e36dc *man/lmi.Rd
 4a11d3243786f69c9bd2bbcec60b17f6 *man/load.enmff.Rd
 0504e01d74be0fba92b3bc3c2aeecc18 *man/mktrj.Rd
 3d43e13d4e021c5194917527955e2e21 *man/mktrj.enma.Rd
 c999e515fbb8b7cdbc9a9c1720ad2db2 *man/mktrj.nma.Rd
-69a90caa3d1a823b32e3ed8951c73a65 *man/mktrj.pca.Rd
+8b51cfde8c9f87098cf19fba85233b39 *man/mktrj.pca.Rd
 1b197e0b2e58fe434e95bc30f3df173b *man/motif.find.Rd
 490f163f728294d0e61c51f9498b4911 *man/mustang.Rd
 5fdfaa5042977d26ce469fdb50bb01d6 *man/network.amendment.Rd
@@ -335,7 +335,7 @@ bc1da462bce348ab521ec7d6cb14070d *man/project.pca.Rd
 2623b0893b2d2b8b3b6a5f0cc3c51cab *man/prune.cna.Rd
 5b6a89bd00e73d6d07dddc6dd9c7403c *man/read.all.Rd
 9e3bb23450bf8a33619b4a4f5c9c7c3f *man/read.crd.Rd
-dcb17af9990c6e3aae566cf3e3a88405 *man/read.dcd.Rd
+b2b102ff0b1f6843969c06cba7640f16 *man/read.dcd.Rd
 e284140c78fd90faef71950e71d63ee9 *man/read.fasta.Rd
 fa9e1b1237cf2bbecee6a7a8b9fe47a5 *man/read.fasta.pdb.Rd
 bbf6020e1aff08292772cac0ae893a33 *man/read.mol2.Rd
@@ -381,9 +381,9 @@ f0c0495e726ec822f118cf1ea60b77be *man/write.pir.Rd
 7ffe3e756f90cee9d1c7a3a9504c8775 *tests/test-all.R
 e562ac9c81e2be76674885a50d7daef9 *tests/testthat/test-aa2mass.R
 b721390b4b4f39acb56f512cd82b8232 *tests/testthat/test-atom2mass.R
-cf34bcf05e40ef088dac47746bf418a6 *tests/testthat/test-cmap.R
+9aee07bcb0688d4dc914233723f2326c *tests/testthat/test-cmap.R
 70736c7087c9f2228b8f8b542d8d1121 *tests/testthat/test-core.find.R
-81db48e1bee4e7f33607c3f8c508204e *tests/testthat/test-dccm.R
+7302a2333a88c60182b815582ba31a8f *tests/testthat/test-dccm.R
 47f12cf7b78fbb0babfbddbebe98d58f *tests/testthat/test-deformation.R
 fc7f6f70dd073a6dec621d53a7960d26 *tests/testthat/test-dssp.R
 5713eca7bff0e8b4f86425f2d7cb9a8c *tests/testthat/test-fitting.R
@@ -391,11 +391,11 @@ fc7f6f70dd073a6dec621d53a7960d26 *tests/testthat/test-dssp.R
 f61c334c7fb54a6ef6e117d49eb16bc7 *tests/testthat/test-nma.R
 21ed308cb1931d5cf80711943e87fc87 *tests/testthat/test-nma.pdbs.R
 0107ab85c58e0b47fa70d1f81f311003 *tests/testthat/test-overlap.R
-086bd4ea434ebcca1e09b94e71e7e160 *tests/testthat/test-pca.R
+d685bd7e6c5f9ac3b25cf87eb7701ad0 *tests/testthat/test-pca.R
 90947257658c08a13258d3aa4f1031bd *tests/testthat/test-pdb.annotate.R
 9ea318f82ed905592029cbbfffe70099 *tests/testthat/test-pdbsplit.R
-0a228e3c054311534900b407f679a51f *tests/testthat/test-read.ncdf.R
+e3204785d12bf287f09cfd3b6871bd53 *tests/testthat/test-read.ncdf.R
 f0f0671d5dc81dc6876c345014c43c10 *tests/testthat/test-read.pdb.R
 650cc4a569115dba4bf703941037dda6 *tests/testthat/test-rmsd.R
 6df4c57a5670a44aacc181a2e01b8b72 *tests/testthat/test-vector-funs.R
-ed3bf7e59ba7b7fa1bbf69ea28b8d608 *vignettes/bio3d_vignettes.Rmd
+491a55ef7caef842ab6229df896c6400 *vignettes/bio3d_vignettes.Rmd
