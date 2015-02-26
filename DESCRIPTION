@@ -1,6 +1,6 @@
 Package: bio3d
 Title: Biological Structure Analysis
-Version: 2.1-3
+Version: 2.2-1
 Author: Barry Grant, Xin-Qiu Yao, Lars Skjaerven, Julien Ide
 VignetteBuilder: knitr
 Imports: parallel, grid
@@ -12,7 +12,7 @@ Description: Utilities to process, organize and explore protein structure, seque
 Maintainer: Barry Grant <bjgrant@umich.edu>
 License: GPL (>= 2)
 URL: http://thegrantlab.org/bio3d/, http://bitbucket.org/Grantlab/bio3d
-Packaged: 2014-10-24 21:47:52 UTC; xinqyao
+Packaged: 2015-02-26 19:18:30 UTC; xinqyao
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2014-10-27 19:03:11
+Date/Publication: 2015-02-27 07:18:36

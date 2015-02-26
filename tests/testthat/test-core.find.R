@@ -2,10 +2,11 @@ context("Testing core.find function")
 
 
 test_that("core.find() works properly", {
+  skip_on_cran()
 
   attach(transducin)
   inds <- unlist(lapply(c("1TND_A", "1TAG", "1AS0", "1AS2"), grep, pdbs$id))
-  pdbs <- pdbs.filter(pdbs, row.inds=inds)
+  pdbs <- trim.pdbs(pdbs, row.inds=inds)
  
   invisible(capture.output(core <- core.find(pdbs, ncore=1)))
   resnos.1 <- c(202, 206, 209, 205, 203, 201)

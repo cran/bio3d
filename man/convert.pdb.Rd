@@ -6,7 +6,7 @@
   PDB formats.
 }
 \usage{
-convert.pdb(pdb, type="original",   
+convert.pdb(pdb, type=c("original", "pdb", "charmm", "amber", "gromacs"),
                 renumber = FALSE, first.resno = 1, first.eleno = 1,
                 consecutive=TRUE, rm.h = TRUE, rm.wat = FALSE,
                 verbose=TRUE)
@@ -82,7 +82,7 @@ convert.pdb(pdb, type="original",
   \code{\link{read.dcd}}, \code{\link{read.fasta.pdb}},
   \code{\link{read.fasta}} }
 \examples{
-\donttest{
+\dontrun{
 
 # Read a PDB file
 pdb <- read.pdb("4q21")

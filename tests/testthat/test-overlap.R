@@ -15,8 +15,8 @@ test_that("Overlap functions", {
   invisible(capture.output(modes <- nma(pdb.a, inds=NULL, ff='calpha',
                                         mass=FALSE, temp=300.0)))
 
-  ca.inds.a <- atom.select(pdb.a, 'calpha', verbose=FALSE)
-  ca.inds.b <- atom.select(pdb.b, 'calpha', verbose=FALSE)
+  ca.inds.a <- atom.select(pdb.a, "calpha", verbose=FALSE)
+  ca.inds.b <- atom.select(pdb.b, "calpha", verbose=FALSE)
 
   ## Set new coordinates of pdb.b
   xyz.b <- fit.xyz(pdb.a$xyz, pdb.b$xyz,
@@ -30,7 +30,7 @@ test_that("Overlap functions", {
   
   o1 <- overlap(modes, dv, nmodes=(modes$natoms*3)-6)
   expect_that(o1$overlap.cum[(modes$natoms*3)-6],
-              equals(1))
+              equals(1, tolerance=1e-6))
   
   expect_that(o1$overlap.cum[1], equals(0.2786508, tolerance=1e-6))
 
@@ -40,7 +40,7 @@ test_that("Overlap functions", {
 
   ## Calculate modes with default arguments
   invisible(capture.output(modes.b <- nma(pdb.b, inds=NULL, ff='calpha',
-                                        mass=FALSE, temp=300.0)))
+                                          mass=FALSE, temp=300.0)))
 
   r <- rmsip(modes, modes.b)
   expect_that(r$overlap[1,1], equals(0.704, tolerance=1e-6))
