@@ -1,4 +1,4 @@
-f4aabf4329c386d98b566d7e007ccb2f *DESCRIPTION
+195e3f6e49d9c27bbe1b0c1dd928c7d8 *DESCRIPTION
 f98f71a90c40e3a9432319b11179a6f1 *NAMESPACE
 bc8944e1be41e905b7ac46fb347c3394 *NEWS
 5e199f7bdb3b2dac728d499af72a66cd *R/aa123.R
@@ -15,7 +15,7 @@ ce37a22980795085c181c10134c204c6 *R/as.pdb.prmtop.R
 209e33ae16d4d9b25880946ada95f3c2 *R/as.select.R
 a178e265e7a83136b94398d6d2e85411 *R/as.xyz.R
 1ad61b9c92f5e0abc66f15a97831b1ef *R/atom.select.R
-1005e30a2a2cf0626a294981a5d4d145 *R/atom.select.pdb.R
+01c2014dd5a1c7df70da977291442a7f *R/atom.select.pdb.R
 c73f9826feee4c69ccffbd62b45fd0cd *R/atom.select.prmtop.R
 35ef25bf95af456136017aaa2d6361f1 *R/atom2ele.R
 17a8373e8df1a455dc17192f295bfb21 *R/atom2mass.R
@@ -261,7 +261,7 @@ c50d66e01ab90e135a211081f819a63c *man/atom2mass.Rd
 1e0a3ec02646a5b37407e630d32b4f92 *man/basename.pdb.Rd
 29c5ac74c5b69f1fabfa396f54592f46 *man/bhattacharyya.Rd
 2b016053e31cdc45a613b567ba314ea9 *man/binding.site.Rd
-ccfb99a36e65da097de1b079d4975de6 *man/bio3d.package.Rd
+627055656c3cfa34dce29dfb6e28468a *man/bio3d.package.Rd
 225773793590d0ec92d6abb6472669af *man/biounit.Rd
 0e222e2103287fdc695f8887bb40c38a *man/blast.pdb.Rd
 9ca205b70db6da407022e6e8e3df592b *man/bounds.Rd
@@ -419,7 +419,7 @@ af2a3b7c59d51a010245f3f9af224b19 *man/write.pdb.Rd
 b3ae7c873b22b803ad82cea743e5794a *man/write.pqr.Rd
 7ffe3e756f90cee9d1c7a3a9504c8775 *tests/testthat.R
 e562ac9c81e2be76674885a50d7daef9 *tests/testthat/test-aa2mass.R
-44dcc96d27587e2f6a1f397d42a168ea *tests/testthat/test-atom.select.R
+f4a44448a8ae2a889fe195f7ac7bc89c *tests/testthat/test-atom.select.R
 ad7f0e5862c60ef29595c538f79b6ea5 *tests/testthat/test-atom2mass.R
 c75752ea141f4ef56738d3bb21fb1211 *tests/testthat/test-clean.pdb.R
 9aee07bcb0688d4dc914233723f2326c *tests/testthat/test-cmap.R
