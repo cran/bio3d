@@ -1,5 +1,5 @@
-195e3f6e49d9c27bbe1b0c1dd928c7d8 *DESCRIPTION
-f98f71a90c40e3a9432319b11179a6f1 *NAMESPACE
+d0b55422297574c62e78785ed408056a *DESCRIPTION
+2af00887bf8ba1fe5b19512675b6f171 *NAMESPACE
 bc8944e1be41e905b7ac46fb347c3394 *NEWS
 5e199f7bdb3b2dac728d499af72a66cd *R/aa123.R
 3a1c88e13bfe0be7c84120618822e090 *R/aa2index.R
@@ -11,18 +11,18 @@ ef880390ae3f58420b0ab4121506c05b *R/angle.xyz.R
 3870b339a62143463ffe0e037b41134f *R/as.fasta.R
 99ce62a5cad5b025855f2f8e174f398d *R/as.pdb.R
 4272b150080c1c8d22a364287fc85aab *R/as.pdb.mol2.R
-ce37a22980795085c181c10134c204c6 *R/as.pdb.prmtop.R
+735f3ec1cd23c14ff58380b5b2c1a549 *R/as.pdb.prmtop.R
 209e33ae16d4d9b25880946ada95f3c2 *R/as.select.R
 a178e265e7a83136b94398d6d2e85411 *R/as.xyz.R
 1ad61b9c92f5e0abc66f15a97831b1ef *R/atom.select.R
 01c2014dd5a1c7df70da977291442a7f *R/atom.select.pdb.R
-c73f9826feee4c69ccffbd62b45fd0cd *R/atom.select.prmtop.R
+472881c06fa417e3342cd7d3f6dbb00a *R/atom.select.prmtop.R
 35ef25bf95af456136017aaa2d6361f1 *R/atom2ele.R
 17a8373e8df1a455dc17192f295bfb21 *R/atom2mass.R
 48a555c4bee0d0dd3c02418713af7a87 *R/atom2xyz.R
 49b9de1c96d9a30ac9c64c446635795b *R/basename.pdb.R
 9b53f56b34f3eb62b8b2845ad974d19b *R/bhattacharyya.R
-90bb4c746682d6f558000ff1aa89caf4 *R/binding.site.R
+c5af3447d6746e0544490d7fdb9040b8 *R/binding.site.R
 384dce8800b821bbf15369eb83081bd6 *R/biounit.R
 0f977cb1878d94c573e7403f9cf8dd8a *R/blast.pdb.R
 e30e78857cdcc09122a065928319fd1f *R/bounds.R
@@ -38,7 +38,7 @@ f76fdfebb462a16c54606a7907fceed1 *R/chain.pdb.R
 59bd3ce7f893392b424cb7625b6a5b38 *R/cna.R
 d9c9e634df80fad4fe997ba9002ed2b3 *R/cna.dccm.R
 9e9013afedba0d15614f9e2d24460cfb *R/cna.ensmb.R
-07e71cde68fb6ed93e603bf48c337d23 *R/cnapath.R
+d425e3f8a1af5e0b66b0a27c71d1141e *R/cnapath.R
 6624ac64efb374dd2e0896326ea811f9 *R/com.R
 e00189a7a762151be9f33223a236a63c *R/com.pdb.R
 c2fdd1f28bdef7d151e51b340a84f278 *R/com.xyz.R
@@ -68,7 +68,7 @@ d9885c3180310f8b8778ee222d632567 *R/difference.vector.R
 9f9aa73363a01367436a9941c20e412c *R/dssp.xyz.R
 5ca5a2b19244bc513c04a8f72312dd01 *R/entropy.R
 d052d6e1b82b8acdd59dee6f4229ed4e *R/filter.cmap.R
-814d19b6a7c89c12a14f15ec994153de *R/filter.dccm.R
+4297b9a0b37ab5fba600405072c09379 *R/filter.dccm.R
 5eee2af1c1b9b9e818e854afaf60f16a *R/filter.identity.R
 c33a1a351880b053a975de07ed48ab34 *R/filter.rmsd.R
 ee379599d8254472d6df82f8ff595439 *R/fit.xyz.R
@@ -80,7 +80,7 @@ f70f36a62d3c57f3f56d68ff67062719 *R/geostas.R
 20d47e236e4682cdd05ac4ceec435e5d *R/get.pdb.R
 93743ad80033f8232d94a72adadc86ae *R/get.seq.R
 a4650a718115f929a223abf936958772 *R/hclustplot.R
-6fb79a5aaba0ce7fddcd150fe6975a15 *R/hmmer.R
+857b73140925a6226bb095ec38713a00 *R/hmmer.R
 a1c7b2c881e3b27c86678708818782d4 *R/identify.cna.R
 9face02e76a999d40e7d3c8f47d45565 *R/inner.prod.R
 b8eaf3135026219319f713351f3913d6 *R/inspect.connectivity.R
@@ -104,7 +104,7 @@ dba0191c38aaf56aa6b9dd16304ddce0 *R/network.amendment.R
 b99297757bce81a46209d4f515663538 *R/nma.pdb.R
 56fef24e35fd2c3fd63fe4f1bc905c68 *R/nma.pdbs.R
 70d776448b5ed1c49b1d15b12d5e5db0 *R/normalize.vector.R
-8bcd2d0791cb64f6f73f9a0caf3b4e23 *R/orient.pdb.R
+1f8acdc2387bae8073ffd6dd4f817dbb *R/orient.pdb.R
 78f5481dba72e37e66a350e3ee6b564b *R/overlap.R
 bfb07d8049ba981029b5cef22eb8b367 *R/pairwise.R
 6e76c8e31335687df8b369a1bdb3f57d *R/pca.R
@@ -116,7 +116,7 @@ bfb07d8049ba981029b5cef22eb8b367 *R/pairwise.R
 026945ae25900ec0a924501a99fafacc *R/pdb2aln.R
 c653c556af553f30ddaeaf2466a69a49 *R/pdb2aln.ind.R
 8e6e56be29eaf3766d4875ae307d4a6e *R/pdb2sse.R
-d9c7c55c77d32727b877e6a6e9710321 *R/pdbaln.R
+7be24d2244d1e49283568a5d2b358d18 *R/pdbaln.R
 13dc32cf8bba028bd221a1f250f419a7 *R/pdbfit.R
 3c4234a682828ad53578b1db44967252 *R/pdbs2pdb.R
 3a9e52c15521ad9349e878e392d9aa1c *R/pdbseq.R
@@ -130,7 +130,7 @@ b6c78a9ed5bf16948ed1c815c4358c54 *R/pfam.R
 9979be9ad91ac27290c418f60879a1d7 *R/plot.dmat.R
 df33e0cbac04f0cf22665444735e9dc5 *R/plot.enma.R
 d9c107896f903ac7d55428e3e0d9dda9 *R/plot.fasta.R
-feebe97b6672cd14cc086cbe6e5dad51 *R/plot.fluct.R
+749ce2f44ad2d31f0fc44a3e59f57c65 *R/plot.fluct.R
 76eb4ca559a6d9c93d795cfb3b9f0262 *R/plot.geostas.R
 f606234b5035e7c593b509fa3e912610 *R/plot.hmmer.R
 119543f73aa719e47a54ee1b1418fc94 *R/plot.nma.R
@@ -139,7 +139,7 @@ ceca3cfe8aadbc4ac81d8cb23ef8f665 *R/plot.pca.loadings.R
 a0110652e10e3b8634be2998e54c7a7d *R/plot.pca.score.R
 0d12278d413198ae0111ea4d7551ac29 *R/plot.pca.scree.R
 b44899b6b43adf43fd010a9faf160ddc *R/plot.rmsip.R
-220d86fce8cec8ee4286f119d85d87ed *R/plotb3.R
+ffdf89ae37fcedff7dd88bef085e65d5 *R/plotb3.R
 6d64ba753c41667a9f45f73810b978d9 *R/print.cna.R
 efea2031c5476d8714166c6ac612cdca *R/print.core.R
 d36bd215d9fc19dee5911ff92cd429ee *R/print.enma.R
@@ -163,7 +163,7 @@ b0dc473b549c4d62c4c21a4261266536 *R/prune.cna.R
 3085906c77b5081cfce21b0a7ce6c96e *R/read.fasta.pdb.R
 9629c7abd29b950e7196fe192443b026 *R/read.mol2.R
 cdd96711a0600797e2ac5fc030a21d4c *R/read.ncdf.R
-c2f8370651aca1fdcacbfbd0986bd88e *R/read.pdb.R
+8a6c7dff088f2ce0fa94fa8054654acc *R/read.pdb.R
 69b73edb0238dabf39cd14f0afe45190 *R/read.pdcBD.R
 86ae9601ae525e4069e64ba153ae135a *R/read.pqr.R
 6131be3051999f471525d424e0e0fe55 *R/read.prmtop.R
@@ -174,7 +174,7 @@ c2f8370651aca1fdcacbfbd0986bd88e *R/read.pdb.R
 1f9d56bce23f0ba1a46c27adef9f5e38 *R/rmsip.R
 9213954e43f1c8b542bb051cac91769d *R/rot.lsq.R
 7810801163901688ee3cab960c83f316 *R/seq2aln.R
-39535d4b5c18890e1890d09d72dcedf8 *R/seqaln.R
+feb5d4a481a91c0031848af7c75520fd *R/seqaln.R
 5bd5ce11e71b9a75a87e3dc71deadd17 *R/seqaln.pair.R
 6b313bded9b39072693f189cee48c6fa *R/seqbind.R
 d15303ebd81be44059c949932085e57f *R/seqidentity.R
@@ -190,8 +190,8 @@ c75b67a9b7274163e06567328630a4a2 *R/summary.pdb.R
 86cdeff6f9f61676904fd91d4b93ab4c *R/torsion.pdb.R
 02ecdf3e7234170d2cc17cefef944ac4 *R/torsion.xyz.R
 61afb6d0d8211337b78b748e90fe8685 *R/trim.pdb.R
-db6c00921bf461bb7069c10f8effe39b *R/trim.pdbs.R
-3ca6c1aa3c3e44d4808de972659fc450 *R/trim.xyz.R
+730ee15f61a9d1d844e32565123943d9 *R/trim.pdbs.R
+7f585f9541a0e392a23eb381d6653e36 *R/trim.xyz.R
 8d3ccf7b583e943a9e46c3c4af39267f *R/unbound.R
 05ee998067a81e37b1bb90dd57a2cec2 *R/uniprot.R
 d5d3df69651197f3f0547daf0e613d1a *R/var.xyz.R
@@ -210,7 +210,7 @@ dbad5c532331c1e7d58e2580583a7a1b *R/write.pdb.R
 c5869d73f1056b1c17354a41133de04d *R/write.pqr.R
 9e57938c5fa7ce30265b29e8750f4810 *R/xyz2atom.R
 278b6f6f5d2e4bb4bbafaca4486df1a6 *README.md
-166b70a5fc7a6a617d22f85be03a31c7 *build/vignette.rds
+64dd3a3716860f5d2f75b4f379f44a4b *build/vignette.rds
 b4187321783b82378e3f9be255107088 *data/aa.index.rda
 f9812a4e8f83523c14ba0a004b77d348 *data/aa.table.rda
 3ecede6fe9737508db5b4b25d6999ebe *data/atom.index.rda
@@ -226,7 +226,7 @@ c15b02e0ad1896ee77c886c16947597a *data/transducin.RData
 b7e58ea62baf621f669d3afd84de90f2 *demo/pdb.R
 b50546f526b9da77fa3d599ccc8f5fdf *inst/CITATION
 a9ef58817f19c8f14b114df37342b318 *inst/doc/bio3d_vignettes.Rmd
-f48ffcfda4935bb9368bba76498f5691 *inst/doc/bio3d_vignettes.html
+005dd0dbd2de9bcbc6bcfc20a1fdfbc5 *inst/doc/bio3d_vignettes.html
 ea4074c1ad01d8237901b03688f91fec *inst/examples/1dpx.pdb
 83ea2593e2c4021492c564f437f0072f *inst/examples/1hel.pdb
 62d8e838c149a5fb165c4d3fd44069fe *inst/examples/hivp.dcd
@@ -309,7 +309,7 @@ cbe6a6f50db0ecfb66fa2c48d9f3e470 *man/gap.inspect.Rd
 c0d3229368c5b1f04faf4d650a7beeeb *man/get.pdb.Rd
 a3d058844ad84c3846920a5080fad8f5 *man/get.seq.Rd
 1560274da20f8df6d1c90ada44a2f53d *man/hclustplot.Rd
-7941849a6e9546865291b4e0dbb8175f *man/hmmer.Rd
+b0e67a4cfe6d27bdc7f636d1f5edc9fb *man/hmmer.Rd
 c232e1bdebd66cae5f828d2323117a43 *man/identify.cna.Rd
 d1db147f827dd27adec412411efb1b7b *man/inner.prod.Rd
 a6e0dbb5bbbdd54641f51a13468365ac *man/inspect.connectivity.Rd
@@ -346,7 +346,7 @@ b9ca2c0bda1081a0b4566e04858fef6b *man/pdbaln.Rd
 e5387c077eeeef29e7153685dbd38182 *man/pdbs2pdb.Rd
 be07bd16023323140f3c24b9cf048cb4 *man/pdbseq.Rd
 34cb7ea578a05f3fd78bada423512521 *man/pdbsplit.Rd
-654bb61e67c8e65e1f3568af1a7d6aee *man/pfam.Rd
+1a3192ec3d0eacf2e82e54c3f8570987 *man/pfam.Rd
 482f6e525d92806e569a9de0dac4e9f6 *man/plot.bio3d.Rd
 c2fc3a3fc68b25960fadfc01856d6891 *man/plot.cmap.Rd
 49f7af774dbb2b04ffabb63d6ea885ed *man/plot.cna.Rd
@@ -357,7 +357,7 @@ b25abe5c5c275ff51d8b8249cfea136a *man/plot.dmat.Rd
 ede88cb9f112ecd87067bbad60a7f2c7 *man/plot.fasta.Rd
 fc16411977caf8d31c003f89ee64bb33 *man/plot.fluct.Rd
 1d336234f2c664954aa84a2241c4b9dc *man/plot.geostas.Rd
-19cfe41d691cb84c31cf5c858315f1b7 *man/plot.hmmer.Rd
+b3091a02d09610f804acb9cc25c72da4 *man/plot.hmmer.Rd
 cde80be2caee0007d3aae194170a4373 *man/plot.nma.Rd
 5840d186467dd965c5695b939b407238 *man/plot.pca.Rd
 264eda1ce263c2aca64309e2c93c2d1b *man/plot.pca.loadings.Rd
@@ -376,7 +376,7 @@ d4dfa8ba90dc0e1b9daf6dd54dd0f9f4 *man/prune.cna.Rd
 e284140c78fd90faef71950e71d63ee9 *man/read.fasta.Rd
 54338b1187ce5a561ca3358c1d34241f *man/read.fasta.pdb.Rd
 9867c217aa909590689cbc5a90f354c3 *man/read.mol2.Rd
-87974c2f4e30b22de64a7bb8cc95d056 *man/read.ncdf.Rd
+569d0321dc5da273dde439057663f1b6 *man/read.ncdf.Rd
 c3763185ea611f5fa955bad847b2d1cd *man/read.pdb.Rd
 6e3ad77352cf6c4e2dd4fb7354994cae *man/read.pdcBD.Rd
 cbbadbd309b7f4f7a26cfa027c284e37 *man/read.pqr.Rd
@@ -403,7 +403,7 @@ e11dfa2cce7b480f56e0153a82d9dd91 *man/torsion.pdb.Rd
 46b164a4619290bad96ee94d3d413a68 *man/trim.pdbs.Rd
 52149be72b4031fc5caf28fc8ae5ef79 *man/trim.xyz.Rd
 67c2777942274c48a7271290b6e23928 *man/unbound.Rd
-978de35695ff9ac4733e85dd37d2db02 *man/uniprot.Rd
+5b47c79a744b28a32b02971a6a8d1f22 *man/uniprot.Rd
 8d1f856736a9fb3121a0dc347b65d70c *man/var.xyz.Rd
 77cc057f3957a606eb0f899a98170541 *man/vec2resno.Rd
 38442ae00c468bc7de9c1e18936667a6 *man/view.cna.Rd
@@ -413,7 +413,7 @@ dcf67a72a4de1ab76e7bf3548e8f15a7 *man/view.dccm.Rd
 1bd7706fbadf8fc9c50b0d6b66bc4fc8 *man/wrap.tor.Rd
 5a7e2af1e926232bd2a33395e2b6e438 *man/write.crd.Rd
 a7e9e2d595918af74478d8d1d5e03dd8 *man/write.fasta.Rd
-fedd9b9ecd324fb03b770e60e2005ebf *man/write.ncdf.Rd
+3a46e3e2b67719907fb746d2313d9eb7 *man/write.ncdf.Rd
 af2a3b7c59d51a010245f3f9af224b19 *man/write.pdb.Rd
 7f5780f0017857067eccc30c99b0b6a9 *man/write.pir.Rd
 b3ae7c873b22b803ad82cea743e5794a *man/write.pqr.Rd
@@ -426,8 +426,8 @@ c75752ea141f4ef56738d3bb21fb1211 *tests/testthat/test-clean.pdb.R
 5927a707bf51a0812b26fe90c11a35e6 *tests/testthat/test-core.find.R
 7302a2333a88c60182b815582ba31a8f *tests/testthat/test-dccm.R
 47f12cf7b78fbb0babfbddbebe98d58f *tests/testthat/test-deformation.R
-fc7f6f70dd073a6dec621d53a7960d26 *tests/testthat/test-dssp.R
-e3064eed4c45ec2367c0b6b0b4d2e539 *tests/testthat/test-fitting.R
+5f881f4769780e4f73ced1a3816ea09b *tests/testthat/test-dssp.R
+bd83b226cea2dea4d1ef3fe0263f828d *tests/testthat/test-fitting.R
 0921fdd652dee2f76c66fcb417686254 *tests/testthat/test-get.pdb.R
 99c901677f486be07dd38cbab47889e0 *tests/testthat/test-nma.R
 f13ff512b94ad55ffe33a6f604e1a944 *tests/testthat/test-nma.pdbs.R
