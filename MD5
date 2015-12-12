@@ -1,4 +1,4 @@
-d0b55422297574c62e78785ed408056a *DESCRIPTION
+676e80a914b4f1178d1eb3085ca418ac *DESCRIPTION
 2af00887bf8ba1fe5b19512675b6f171 *NAMESPACE
 bc8944e1be41e905b7ac46fb347c3394 *NEWS
 5e199f7bdb3b2dac728d499af72a66cd *R/aa123.R
@@ -32,9 +32,9 @@ d466ea5cf94d1383b2df41cb5e695735 *R/bwr.colors.R
 3e5027282efcdbcb0cee6308108d285f *R/cat.pdb.R
 f76fdfebb462a16c54606a7907fceed1 *R/chain.pdb.R
 58322ff587abf5267ceb97fcc45de28f *R/check.utility.R
-08afc42ab62bed8eebaea3a00581729c *R/clean.pdb.R
+c671bf496bf0e91bf455cbcbe120a232 *R/clean.pdb.R
 156e7a969b4bc729b36bf13a890c5252 *R/cmap.R
-62c8a0b10d68d674f9a124a64c6db5c5 *R/cmap.pdb.R
+ecaa84fd34f5e9c4953e20e2b6cdb1fa *R/cmap.pdb.R
 59bd3ce7f893392b424cb7625b6a5b38 *R/cna.R
 d9c9e634df80fad4fe997ba9002ed2b3 *R/cna.dccm.R
 9e9013afedba0d15614f9e2d24460cfb *R/cna.ensmb.R
@@ -61,7 +61,7 @@ b9d923036a07d31ba20dd829773c1ba9 *R/dccm.nma.R
 d9885c3180310f8b8778ee222d632567 *R/difference.vector.R
 39fb3d1a826f062238691b7093213a22 *R/dist.xyz.R
 535730da72645c942a15df5b94ad338e *R/dm.R
-935328435177183d996145d9c03c1c9e *R/dm.xyz.R
+e494178a43c1a6f4ac897715af4ec8d4 *R/dm.xyz.R
 9bcc4353cde242101d7ce9c54fe33aa9 *R/dssp.R
 686a12df9bf9101441481aef4a1e4fb5 *R/dssp.pdb.R
 1e468e2685c24dcdc0a2974760c1a081 *R/dssp.pdbs.R
@@ -80,7 +80,7 @@ f70f36a62d3c57f3f56d68ff67062719 *R/geostas.R
 20d47e236e4682cdd05ac4ceec435e5d *R/get.pdb.R
 93743ad80033f8232d94a72adadc86ae *R/get.seq.R
 a4650a718115f929a223abf936958772 *R/hclustplot.R
-857b73140925a6226bb095ec38713a00 *R/hmmer.R
+45404f06972f1798be851a67e599a3a4 *R/hmmer.R
 a1c7b2c881e3b27c86678708818782d4 *R/identify.cna.R
 9face02e76a999d40e7d3c8f47d45565 *R/inner.prod.R
 b8eaf3135026219319f713351f3913d6 *R/inspect.connectivity.R
@@ -162,8 +162,8 @@ b0dc473b549c4d62c4c21a4261266536 *R/prune.cna.R
 952421f3b6bf1d8f768ed8666c801e03 *R/read.fasta.R
 3085906c77b5081cfce21b0a7ce6c96e *R/read.fasta.pdb.R
 9629c7abd29b950e7196fe192443b026 *R/read.mol2.R
-cdd96711a0600797e2ac5fc030a21d4c *R/read.ncdf.R
-8a6c7dff088f2ce0fa94fa8054654acc *R/read.pdb.R
+b28571bc35c93c729d7e8566c8ee4318 *R/read.ncdf.R
+5816a151d86053bc868de546ebeac376 *R/read.pdb.R
 69b73edb0238dabf39cd14f0afe45190 *R/read.pdcBD.R
 86ae9601ae525e4069e64ba153ae135a *R/read.pqr.R
 6131be3051999f471525d424e0e0fe55 *R/read.prmtop.R
@@ -204,7 +204,7 @@ fd1420d661c91e4be260a0d3c4f89576 *R/vmd.colors.R
 91577affd2d5930b392467972a3598ab *R/wrap.tor.R
 09cb8f145e08d41466a11b90c9fd6b8a *R/write.crd.R
 f7ec0b5657fb192ad6876aaa02999ff3 *R/write.fasta.R
-0716d636fd29f9e6276cd1bf5151751e *R/write.ncdf.R
+b1e0b5a0e37995a494cf65c7b7cb78b7 *R/write.ncdf.R
 dbad5c532331c1e7d58e2580583a7a1b *R/write.pdb.R
 548106c98ad8bf2b3b63686d9b7947ad *R/write.pir.R
 c5869d73f1056b1c17354a41133de04d *R/write.pqr.R
@@ -212,8 +212,8 @@ c5869d73f1056b1c17354a41133de04d *R/write.pqr.R
 278b6f6f5d2e4bb4bbafaca4486df1a6 *README.md
 64dd3a3716860f5d2f75b4f379f44a4b *build/vignette.rds
 b4187321783b82378e3f9be255107088 *data/aa.index.rda
-f9812a4e8f83523c14ba0a004b77d348 *data/aa.table.rda
-3ecede6fe9737508db5b4b25d6999ebe *data/atom.index.rda
+01158334e1c54f122a6af1da25b2b636 *data/aa.table.rda
+296330438e07fd617054060b1e1c1c19 *data/atom.index.rda
 fa83e2ac0f558f03e525c98b46597781 *data/elements.rda
 e34a9476dd620f4bfd16b153d79e38ed *data/hivp.RData
 4c0f50adbadaefe679ab2510971a6137 *data/kinesin.RData
@@ -261,7 +261,7 @@ c50d66e01ab90e135a211081f819a63c *man/atom2mass.Rd
 1e0a3ec02646a5b37407e630d32b4f92 *man/basename.pdb.Rd
 29c5ac74c5b69f1fabfa396f54592f46 *man/bhattacharyya.Rd
 2b016053e31cdc45a613b567ba314ea9 *man/binding.site.Rd
-627055656c3cfa34dce29dfb6e28468a *man/bio3d.package.Rd
+0ae39d8a433391ecf7c4bd2b04886201 *man/bio3d.package.Rd
 225773793590d0ec92d6abb6472669af *man/biounit.Rd
 0e222e2103287fdc695f8887bb40c38a *man/blast.pdb.Rd
 9ca205b70db6da407022e6e8e3df592b *man/bounds.Rd
@@ -376,7 +376,7 @@ d4dfa8ba90dc0e1b9daf6dd54dd0f9f4 *man/prune.cna.Rd
 e284140c78fd90faef71950e71d63ee9 *man/read.fasta.Rd
 54338b1187ce5a561ca3358c1d34241f *man/read.fasta.pdb.Rd
 9867c217aa909590689cbc5a90f354c3 *man/read.mol2.Rd
-569d0321dc5da273dde439057663f1b6 *man/read.ncdf.Rd
+aef6485e597d4e4ccac1da0b72c021c6 *man/read.ncdf.Rd
 c3763185ea611f5fa955bad847b2d1cd *man/read.pdb.Rd
 6e3ad77352cf6c4e2dd4fb7354994cae *man/read.pdcBD.Rd
 cbbadbd309b7f4f7a26cfa027c284e37 *man/read.pqr.Rd
@@ -413,7 +413,7 @@ dcf67a72a4de1ab76e7bf3548e8f15a7 *man/view.dccm.Rd
 1bd7706fbadf8fc9c50b0d6b66bc4fc8 *man/wrap.tor.Rd
 5a7e2af1e926232bd2a33395e2b6e438 *man/write.crd.Rd
 a7e9e2d595918af74478d8d1d5e03dd8 *man/write.fasta.Rd
-3a46e3e2b67719907fb746d2313d9eb7 *man/write.ncdf.Rd
+affb650517fc141106b158409134fb97 *man/write.ncdf.Rd
 af2a3b7c59d51a010245f3f9af224b19 *man/write.pdb.Rd
 7f5780f0017857067eccc30c99b0b6a9 *man/write.pir.Rd
 b3ae7c873b22b803ad82cea743e5794a *man/write.pqr.Rd
