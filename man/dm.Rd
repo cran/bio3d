@@ -2,6 +2,7 @@
 \alias{dm}
 \alias{dm.pdb}
 \alias{dm.xyz}
+\alias{dm.pdbs}
 \title{ Distance Matrix Analysis }
 \description{
   Construct a distance matrix for a given protein structure.
@@ -10,8 +11,10 @@
 dm(\dots)
 
 \method{dm}{pdb}(pdb, inds = NULL, grp = TRUE, verbose=TRUE, \dots)
+\method{dm}{pdbs}(pdbs, \dots)
 
-\method{dm}{xyz}(xyz, grpby = NULL, scut = NULL, mask.lower = TRUE, ncore=1, \dots)
+\method{dm}{xyz}(xyz, grpby = NULL, scut = NULL, mask.lower = TRUE, 
+                  gc.first=FALSE, ncore=1, \dots)
 }
 \arguments{
   \item{pdb}{ a \code{pdb} structure object as returned by
@@ -22,6 +25,8 @@ dm(\dots)
   \item{grp}{ logical, if TRUE atomic distances will be grouped according
     to their residue membership. See \sQuote{grpby}. }
   \item{verbose}{ logical, if TRUE possible warnings are printed. }
+  \item{pdbs}{ a \sQuote{pdbs} object as returned by \code{\link{read.fasta.pdb}}
+    or \code{\link{pdbaln}}. }
   \item{xyz}{ a numeric vector or matrix of Cartesian coordinates.}
   \item{grpby}{ a vector counting connective duplicated elements that
     indicate the elements of \code{xyz} that should be considered as a group
@@ -31,6 +36,9 @@ dm(\dots)
     value.}
   \item{mask.lower}{ logical, if TRUE the lower matrix elements
     (i.e. those below the diagonal) are returned as NA.}
+  \item{gc.first}{ logical, if TRUE will call gc() first before calculation of 
+    distance matrix. This is to solve the memory overload problem when \code{ncore > 1}
+    and \code{xyz} has many rows/columns, with a bit sacrifice on speed. }
   \item{ncore }{ number of CPU cores used to do the calculation.
     \code{ncore>1} requires package \sQuote{parallel} installed. }
   \item{\dots}{ arguments passed to and from functions. }
@@ -79,7 +87,7 @@ dm(\dots)
 
 ##--- Distance Matrix Plot
 pdb <- read.pdb( "4q21" )
-k <- dm(pdb,selection="calpha")
+k <- dm(pdb,inds="calpha")
 filled.contour(k, nlevels = 10)
 
 ## NOTE: FOLLOWING EXAMPLE NEEDS MUSCLE INSTALLED

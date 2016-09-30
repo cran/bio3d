@@ -11,9 +11,11 @@
 \usage{
 mktrj(...)
 
-\method{mktrj}{pca}(pca = NULL, pc = 1, mag = 1, step = 0.125, file = NULL,  ...)
+\method{mktrj}{pca}(pca = NULL, pc = 1, mag = 1, step = 0.125, file =
+NULL, pdb = NULL, rock=TRUE, ...)
 
-\method{mktrj}{nma}(nma = NULL, mode = 7, mag = 10, step = 1.25, file = NULL,  ...)
+\method{mktrj}{nma}(nma = NULL, mode = 7, mag = 10, step = 1.25, file = NULL, 
+      pdb = NULL, rock=TRUE,  ...)
 
 \method{mktrj}{enma}(enma = NULL, pdbs = NULL, s.inds = NULL, m.inds = NULL,
       mag = 10, step = 1.25, file = NULL, rock = TRUE, ncore = NULL, ...) 
@@ -29,6 +31,11 @@ mktrj(...)
   \item{mag}{ a magnification factor for scaling the displacements. }
   \item{step}{ the step size by which to increment along the pc/mode. }
   \item{file}{ a character vector giving the output PDB file name. }
+  \item{pdb}{ an object of class \code{"pdb"} as obtained from 
+    \code{\link{read.pdb}} or class \code{"pdbs"} as obtained from
+    \code{\link{read.fasta.pdb}}. If not NULL, used as reference to write
+    the PDB file. }
+  \item{rock}{ logical, if TRUE the trajectory rocks. }
   \item{mode}{ the mode number along which displacements should be made.}
   \item{pdbs}{ a list object of class \code{"pdbs"} (obtained with
     \code{\link{pdbaln}} or \code{\link{read.fasta.pdb}}) which
@@ -37,7 +44,6 @@ mktrj(...)
     \code{enma} object for which the trajectory shall be generated. }
   \item{m.inds}{ the mode number(s) along which displacements should be
     made. }
-  \item{rock}{ logical, if TRUE the trajectory rocks. }
   \item{ncore }{ number of CPU cores used to do the calculation.
     \code{ncore>1} requires package \sQuote{parallel} installed. } 
   \item{\dots}{ additional arguments passed to and from functions
@@ -63,7 +69,7 @@ mktrj(...)
 \seealso{
   \code{\link{pca}}, \code{\link{nma}},
   \code{\link{nma.pdbs}},
-  \code{\link{view.modes}}.
+  \code{\link{pymol.modes}}.
 }
 \examples{
 \dontrun{
@@ -91,7 +97,7 @@ modes <- nma(pdb)
 
 ## Visualize modes
 outfile = file.path(tempdir(), "mode_7.pdb")
-mktrj(modes, mode=7, file = outfile)
+mktrj(modes, mode=7, pdb=pdb, file = outfile)
 outfile
 
 }

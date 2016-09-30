@@ -1,6 +1,6 @@
 "get.pdb" <-
   function (ids, path = ".", URLonly = FALSE, overwrite = FALSE, gzip = FALSE, split = FALSE, 
-      verbose = TRUE, ncore = 1, ... ) 
+            format = "pdb", verbose = TRUE, ncore = 1, ... ) 
 {
     if(.Platform$OS.type=="windows")
       gzip <- FALSE
@@ -15,6 +15,10 @@
        } else {
           setup.ncore(ncore = 4)
        }
+    }
+
+    if(!tolower(format) %in% c("pdb", "cif")) {
+        stop("'format' must be either 'pdb' or 'cif'")
     }
 
     if(inherits(ids, "blast")) ids = ids$pdb.id
@@ -32,7 +36,7 @@
       ids4 <- substr(basename(ids), 1, 4)
     }
     ids4 <- unique(ids4)
-    pdb.files <- paste(ids4, ".pdb", ifelse(gzip, ".gz", ""), sep = "")
+    pdb.files <- paste(ids4, ".", format, ifelse(gzip, ".gz", ""), sep = "")
     get.files <- file.path("http://www.rcsb.org/pdb/files", pdb.files)
     if (URLonly) 
         return(get.files)
@@ -45,7 +49,7 @@
     if(ncore > 1) {
        rtn <- unlist(mclapply(1:length(pdb.files), function(k) {
           if (!file.exists(sub(".gz$", "", put.files[k])) | overwrite ) {
-            rtn <- try(download.file(get.files[k], put.files[k], quiet = !verbose), silent = TRUE)
+            rtn <- try(download.file(get.files[k], put.files[k], method='internal', quiet = !verbose), silent = TRUE)
             if(inherits(rtn, "try-error")) {
                rtn <- 1
                file.remove(put.files[k])
@@ -63,7 +67,7 @@
     } else {
        for (k in 1:length(pdb.files)) {
          if (!file.exists(sub(".gz$", "", put.files[k])) | overwrite ) {
-           rt <- try(download.file(get.files[k], put.files[k], quiet = !verbose), silent=TRUE)
+           rt <- try(download.file(get.files[k], put.files[k], method='internal', quiet = !verbose), silent=TRUE)
            rtn[k] <- rt
            if(inherits(rt, "try-error")) {
               rtn[k] <- 1
@@ -77,11 +81,13 @@
            rtn[k] <- put.files[k]
            warning(paste(put.files[k], " exists. Skipping download"))
          }
+         gc()
        }
     }
-    
-    names(rtn) <- file.path(path, paste(ids4, ".pdb", sep = ""))
-    if (any(rtn == 1)) {
+   
+    rtn <- as.character(rtn) 
+    names(rtn) <- file.path(path, paste(ids4, ".", format, sep = ""))
+    if (any(rtn == '1')) {
         warning("Some files could not be downloaded, check returned value")
         return(rtn)
     } else {

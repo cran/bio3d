@@ -1,5 +1,7 @@
-\name{view.cna}
-\alias{view.cna}
+\name{vmd}
+\alias{vmd}
+\alias{vmd.cna}
+\alias{vmd.cnapath}
 \title{ View CNA Protein Structure Network Community Output in VMD }
 \description{
   This function generates a VMD scene file and a PDB file that can be 
@@ -8,14 +10,21 @@
   the community protein structure network. 
 }
 \usage{
-view.cna(x, pdb, layout = layout.cna(x, pdb, k=3), 
+vmd(\dots)
+
+\method{vmd}{cna}(x, pdb, layout = layout.cna(x, pdb, k=3), 
 		col.sphere=NULL, col.lines = "silver", weights = NULL, 
-		radius = table(x$communities$membership)/5, alpha = 1, 
+		radius = table(x$communities$membership)/5, alpha = 1,
 		vmdfile = "network.vmd", pdbfile = "network.pdb", 
-		launch = FALSE)
+                full = FALSE, launch = FALSE, exefile=NULL, \dots)
+
+\method{vmd}{cnapath}(x, pdb, out.prefix = "vmd.cnapath", spline = FALSE, 
+   colors = c("blue", "red"), launch = FALSE, exefile=NULL, \dots)
+
 }
 \arguments{
-  \item{x}{A 'cna' class object such as obtained from \sQuote{cna} function/
+  \item{x}{A 'cna' or 'cnapath' class object as obtained from functions
+    \code{cna} or \code{cnapath}.
   }
   \item{pdb}{A 'pdb' class object such as obtained from \sQuote{read.pdb} function.
   }
@@ -42,9 +51,31 @@ view.cna(x, pdb, layout = layout.cna(x, pdb, k=3),
   \item{pdbfile}{ A character element specifying the output pdb file name to be
     loaded in VMD.
   }
+  \item{full}{ Logical, if TRUE the full all-atom network rather than the
+    clustered community network will be drawn. Intra community edges are
+    colored according to the community membership, while inter community
+    edges are thicker and colored black.
+  }
   \item{launch}{ Logical. If TRUE, a VMD session will be started with
-    the output of \sQuote{view.cna}.
-}
+    the output of \sQuote{vmd.cna}.
+  }
+  \item{out.prefix}{ Prefix for the names of output files, \sQuote{vmd.cnapath.vmd}
+    and \sQuote{vmd.cnapath.pdb}.
+  }
+  \item{spline}{ Logical, if TRUE all paths are displayed as spline
+    curves. 
+  }
+  \item{colors}{
+    Character vector or integer scalar, define path colors. If a
+    character vector, passed to \code{\link{colorRamp}} function to generate the 
+    color scales. If an integer, color all paths the same way with VMD color 
+    ID equal to the integer. }
+  \item{exefile}{ file path to the \sQuote{VMD} program on your system (i.e.
+    how is \sQuote{VMD} invoked). If \code{NULL}, use OS-dependent
+    default path to the program. }
+  \item{\dots}{ additional arguments passed to the function
+    \code{\link{colorRamp}} (in \code{vmd.cnapath}).
+  }
 }
 \details{ 
   This function generates a scaled sphere (communities) and stick (edges) 
@@ -74,7 +105,7 @@ pdbfile <- system.file("examples/hivp.pdb", package="bio3d")
 pdb <- read.pdb(pdbfile)
 
 # View cna 
-view.cna(net, pdb, launch=FALSE)
+vmd.cna(net, pdb, launch=FALSE)
 ## within VMD set 'coloring method' to 'Chain' and 'Drawing method' to Tube
 
 
@@ -84,7 +115,7 @@ pdb.gdi = trim.pdb(pdb.gdi, inds=atom.select(pdb.gdi, chain="A", elety="CA"))
 modes.gdi = nma(pdb.gdi)
 cij.gdi = dccm(modes.gdi)
 net.gdi = cna(cij.gdi, cutoff.cij=0.35)
-#view.cna(net.gdi, pdb.gdi, alpha = 0.7, launch=TRUE)
+#vmd.cna(net.gdi, pdb.gdi, alpha = 0.7, launch=TRUE)
 
 detach(hivp)
 

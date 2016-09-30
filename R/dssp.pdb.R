@@ -11,14 +11,26 @@
     os1 <- .Platform$OS.type
     status <- system(paste(exefile, "--version"),
                      ignore.stderr = TRUE, ignore.stdout = TRUE)
-    
+
+    exefile0 <- exefile # for error message only
+
+    ## Try for Mac OS X homebrew version, called "mkdssp".
+    if(!(status %in% c(0,1))) {
+      exefile = "mkdssp"
+      status <- system(paste(exefile, "--version"),
+                       ignore.stderr = TRUE, ignore.stdout = TRUE)
+     }    
 ###    if(!(status %in% c(0,1)))
-###      stop(paste("Launching external program 'DSSP' failed\n",
-###                 "  make sure '", exefile, "' is in your search path", sep=""))
-    
+    if(status!=0) {
+      stop(paste("Launching external program 'dssp' (or 'mkdssp') failed\n",
+                 "  make sure '", exefile0, "' is in your search path", sep=""))
+    }
+
     ## check atom composition - need backbone atoms to continue SSE analysis
     checkatoms <- TRUE
     if(checkatoms) {
+
+      ## check on backbone atoms
       inds <- atom.select(pdb, "backbone", verbose=verbose)
       tmp <- trim.pdb(pdb, inds)
       
@@ -40,6 +52,13 @@
         warning(paste("Residues with missing backbone atoms detected:",
                       paste(unique(resid)[incomplete], collapse=", "), 
                       collapse=" "))
+
+      ## check for non-protein atoms
+      inds <- atom.select(pdb, "protein", verbose=verbose, inverse=TRUE)
+      if(length(inds$atom) > 0)
+          warning(paste("Non-protein residues detected in input PDB:",
+                        paste(unique(pdb$atom$resid[ inds$atom ]), collapse=", ")))
+ 
     }
     
     infile <- tempfile()
@@ -99,6 +118,11 @@
     res.insert <- substring(raw.lines, 11, 11)          ## Insertion codes
     res.ind <- 1:length(res.num)                        ## Internal indices
 
+    ## names for output sse vector
+    ins <- trim(res.insert)
+    ins[ ins=="" ] = NA
+    names(sse) <- paste(res.num, cha, ins, sep="_")
+      
     if(any(res.insert!=" ")) {
        if(resno) {
          warning("Insertions are found in PDB: Residue numbers may be incorrect.

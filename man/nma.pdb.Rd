@@ -12,8 +12,7 @@
                   mass = TRUE, temp = 300.0, keep = NULL, hessian = NULL,
                   outmodes = NULL, \dots )
 
-build.hessian(xyz, pfc.fun, fc.weights = NULL, sequ = NULL, sse = NULL,
-    ss.bonds = NULL, \dots)
+build.hessian(xyz, pfc.fun, fc.weights = NULL, pdb = NULL, \dots)
 
 \method{print}{nma}(x, nmodes=6, \dots)
 }
@@ -26,7 +25,7 @@ build.hessian(xyz, pfc.fun, fc.weights = NULL, sequ = NULL, sse = NULL,
     function will attempt to select the calpha atoms automatically
     (based on function \code{\link{atom.select}}). }
   \item{ff}{ character string specifying the force field to use:
-    \sQuote{calpha}, \sQuote{anm}, \sQuote{pfanm}, \sQuote{calphax},
+    \sQuote{calpha}, \sQuote{anm}, \sQuote{pfanm}, 
     \sQuote{reach}, or \sQuote{sdenm}. }
   \item{pfc.fun}{ customized pair force constant (\sQuote{pfc})
     function. The provided function should take a vector of distances as
@@ -49,11 +48,6 @@ build.hessian(xyz, pfc.fun, fc.weights = NULL, sequ = NULL, sse = NULL,
   \item{fc.weights}{ a numeric matrix of size NxN (where N is the number
     of calpha atoms) containg scaling factors for the pariwise force
     constants. See examples below. }
-  \item{sse}{ secondary structure elements as obtained from
-    \code{dssp}. }
-  \item{sequ}{ a character vector of the amino acid sequence. }
-  \item{ss.bonds}{ a numeric two-column matrix containing the residue
-    numbers of the disulfide bridges in the structure. }
   \item{x}{ an \code{nma} object obtained from \code{\link{nma.pdb}}. }
   \item{nmodes}{ numeric, number of modes to be printed. }
   \item{...}{ additional arguments to \code{\link{build.hessian}},
@@ -161,8 +155,6 @@ sse      <- dssp(pdb, resno=FALSE, full=TRUE)
 ss.bonds <- matrix(c(76,94, 64,80, 30,115, 6,127),
                    ncol=2, byrow=TRUE)
 
-modes <- nma(pdb, ff="calphax", sse=sse, ss.bonds=ss.bonds)
-
 
 ## User defined energy function
 ## Note: Must take a vector of distances
@@ -185,7 +177,7 @@ modes <- eigen(hessian)
 pdb <- read.pdb("1xj0")
 
 ## nma(pdb)
-modes <- nma(pdb, mass.custom=list(CSX=121.166))
+#modes <- nma(pdb, mass.custom=list(CSX=121.166))
 }
 }
 \keyword{ analysis }

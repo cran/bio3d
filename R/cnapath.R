@@ -3,10 +3,10 @@
 # Reference 
 # Yen, J.Y. (1971) Finding the K Shortest Loopless Paths in a Network.
 # Management Science. 17(11):712-716.
+cnapath <- function(cna, from, to=NULL, k=10, collapse=TRUE, ncore=NULL, ...) {
 
-cnapath <- function(cna, from, to, k = 10, ncore = NULL, ...) {
-  
   oops <- requireNamespace("igraph", quietly = TRUE)
+
   if (!oops) 
      stop("igraph package missing: Please install, see: ?install.packages")
   
@@ -15,6 +15,48 @@ cnapath <- function(cna, from, to, k = 10, ncore = NULL, ...) {
 
   ncore = setup.ncore(ncore)
 
+  pairs <- NULL
+  if(is.null(to)) {
+     if(is.matrix(from)) {
+        pairs <- apply(from, 1, function(x) list(from=x[1], to=x[2]))
+     } else {
+        # all other nodes as sink
+        to <- setdiff(seq_along(igraph::V(cna$network)), from)
+     }
+  } 
+  if(is.null(pairs)) {
+     from <- unique(from); to <- unique(to)
+     for(i in 1:length(from)) 
+        for(j in 1:length(to)) pairs <- c(pairs, list(list(from=from[i], to=to[j])))
+  }
+
+  ## Initialize progress bar
+  pb <- .init.pb(ncore, min=0, max=k*length(pairs))
+
+  ## optimize ncore partition
+  ncore.out <- ifelse(ncore < length(pairs), ncore, length(pairs))
+  ncore.in <- as.integer(floor(ncore / ncore.out))
+
+  paths <- mclapply(pairs, function(x)
+              .cnapath.core(cna=cna, from=x$from, to=x$to, k=k, ncore=ncore.in, 
+                 pb=pb, ...), mc.cores=ncore.out)
+
+  if(collapse) {
+     cls <- class(paths[[1]])
+     coms <- names(paths[[1]])
+     paths <- lapply(coms, function(x) do.call(c, lapply(paths, "[[", x)) )
+     names(paths) <- coms 
+     class(paths) <- cls
+  }
+
+  ## Finish progress bar
+  .close.pb(pb)
+
+  return(paths)
+}
+
+.cnapath.core <- function(cna, from, to, k=1, ncore=1, pb=NULL, ...) {
+  
   graph = cna$network
 
   # which path from the list is the shortest?
@@ -39,6 +81,7 @@ cnapath <- function(cna, from, to, k = 10, ncore = NULL, ...) {
 
   # number of currently found shortest paths
   kk <- 1
+  if(!is.null(pb)) .update.pb(pb)
 
   # All shortest paths are stored in container A in order
   dist = sum(igraph::E(graph)$weight[k0$epath[[1]]])
@@ -46,9 +89,6 @@ cnapath <- function(cna, from, to, k = 10, ncore = NULL, ...) {
 
   # All candidates are stored in container B
   B <- list()
-
-  # For progress bar
-  pb <- txtProgressBar(min=0, max=k, style=3)
 
   # until k shortest paths are found
   while(kk < k){
@@ -91,7 +131,7 @@ cnapath <- function(cna, from, to, k = 10, ncore = NULL, ...) {
           }
        }
        NULL
-    } ) 
+    }, mc.cores = ncore )
     tmpB <- tmpB[ !sapply(tmpB, is.null) ]
     B <- c(B, tmpB)
     if(length(B) == 0) break
@@ -104,20 +144,18 @@ cnapath <- function(cna, from, to, k = 10, ncore = NULL, ...) {
     kk <- kk + 1
     B <- B[-sp]
 
-    setTxtProgressBar(pb, kk)
+    if(!is.null(pb)) .update.pb(pb)
   }
 
   # stopped before reaching k paths
   if(kk < k) {
-    setTxtProgressBar(pb, k)
+    if(!is.null(pb)) .update.pb(pb, k-kk)
     warning("Reaching maximal number of possible paths (", kk, ")")
   }
-  close(pb)
 
   out <- list(path=lapply(A, "[[", "path"),  
               epath = lapply(A, "[[", "epath"), 
               dist = sapply(A, "[[", "dist"))
-  class(out) <- c("cnapath", "list")
+  class(out) <- "cnapath"
   return(out)
 }
-

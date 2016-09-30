@@ -1,6 +1,7 @@
 \name{atom.select}
 \alias{atom.select}
 \alias{atom.select.pdb}
+\alias{atom.select.mol2}
 \alias{atom.select.prmtop}
 \alias{print.select}
 \title{ Atom Selection from PDB and PRMTOP Structure Objects }
@@ -15,8 +16,16 @@ atom.select(\dots)
 \method{atom.select}{pdb}(pdb, string = NULL,
                           type  = NULL, eleno = NULL, elety = NULL,
                           resid = NULL, chain = NULL, resno = NULL,
-                          segid = NULL, operator = "AND",
-                          inverse = FALSE, value = FALSE, verbose=FALSE, \dots)
+                          insert = NULL, segid = NULL, 
+                          operator = "AND", inverse = FALSE,
+                          value = FALSE, verbose=FALSE, \dots)
+
+\method{atom.select}{mol2}(mol, string=NULL,
+                           eleno = NULL, elena = NULL, elety = NULL,
+                           resid = NULL, chain = NULL, resno = NULL,
+                           statbit = NULL,
+			   operator = "AND", inverse = FALSE,
+                           value = FALSE, verbose=FALSE,  \dots)
 
 \method{atom.select}{prmtop}(prmtop, ...)
 
@@ -28,15 +37,19 @@ atom.select(\dots)
   \item{pdb}{ a structure object of class \code{"pdb"}, obtained from
     \code{\link{read.pdb}}. }
   \item{string}{ a single selection keyword from \code{calpha}
-    \code{cbeta} \code{backbone} \code{protein} \code{nucleic}
-    \code{ligand} \code{water} \code{h} or \code{noh}. }
+    \code{cbeta} \code{backbone} \code{sidechain} \code{protein}
+    \code{nucleic} \code{ligand} \code{water} \code{h} or \code{noh}. }
   \item{type}{ a single element character vector for selecting \sQuote{ATOM}
     or \sQuote{HETATM} record types. }
   \item{eleno}{ a numeric vector of element numbers. }
+  \item{elena}{ a character vector of atom names. }
   \item{elety}{ a character vector of atom names. }
   \item{resid}{ a character vector of residue name identifiers. }
   \item{chain}{ a character vector of chain identifiers. }
   \item{resno}{ a numeric vector of residue numbers. }
+  \item{insert}{ a character vector of insert identifiers. Non-insert 
+    residues can be selected with \code{NA} or \sQuote{} values. The default value 
+    of \code{NULL} will select both insert and non-insert residues. }
   \item{segid}{ a character vector of segment identifiers. }
   \item{operator}{ a single element character specifying either the AND
     or OR operator by which individual selection components should be
@@ -48,6 +61,9 @@ atom.select(\dots)
     the matches determined by \code{atom.select} are returned, and if TRUE,
     a \code{pdb} object containing the matching atoms themselves is
     returned. }
+  \item{mol}{ a structure object of class \code{"mol2"}, obtained from
+    \code{\link{read.mol2}}. }
+  \item{statbit}{ a character vector of statbit identifiers. }
   \item{prmtop}{ a structure object of class \code{"prmtop"}, obtained from
     \code{\link{read.prmtop}}. }
   \item{x}{ a atom.select object as obtained from
@@ -58,7 +74,7 @@ atom.select(\dots)
   corresponding to the intersection of various input criteria.
 
   Input selection criteria include selection \code{string} keywords (such as
-  \code{"calpha"}, \code{"backbone"}, \code{"protein"},
+  \code{"calpha"}, \code{"backbone"}, \code{"sidechain"},  \code{"protein"},
   \code{"nucleic"}, \code{"ligand"}, etc.) and individual named
   selection components (including \sQuote{chain},  \sQuote{resno},
   \sQuote{resid}, \sQuote{elety} etc.).
@@ -147,7 +163,7 @@ ca.pdb <- trim.pdb(pdb, sele)
 \dontrun{
 
 ##- PRMTOP example
-prmtop <- read.prmtop("prot_solvated.prmtop")
+prmtop <- read.prmtop(system.file("examples/crambin.prmtop", package="bio3d"))
 
 ## Atom selection
 ca.inds <- atom.select(prmtop, "calpha")

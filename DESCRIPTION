@@ -1,18 +1,38 @@
 Package: bio3d
 Title: Biological Structure Analysis
-Version: 2.2-4
-Author: Barry Grant, Xin-Qiu Yao, Lars Skjaerven, Julien Ide
+Version: 2.3-0
+Authors@R: c(person("Barry", "Grant", role=c("aut", "cre"),
+                     email="bjgrant@umich.edu"),
+             person("Xin-Qiu", "Yao", role="aut"),
+             person("Lars", "Skjaerven", role="aut"), 
+             person("Julien", "Ide", role="aut"))
+Author: Barry Grant [aut, cre], 
+  Xin-Qiu Yao [aut], 
+  Lars Skjaerven [aut], 
+  Julien Ide [aut]
 VignetteBuilder: knitr
-Imports: parallel, grid, graphics, grDevices, stats, utils
+LinkingTo: Rcpp
+Imports: Rcpp, parallel, grid, graphics, grDevices, stats, utils
 Suggests: XML, RCurl, lattice, ncdf4, igraph, bigmemory, knitr,
-        testthat (>= 0.9.1)
+        testthat (>= 0.9.1), httr
 Depends: R (>= 3.1.0)
 LazyData: yes
-Description: Utilities to process, organize and explore protein structure, sequence and dynamics data.  Features include the ability to read and write structure, sequence and dynamic trajectory data, perform sequence and structure database searches, data summaries, atom selection, alignment, superposition, rigid core identification, clustering, torsion analysis, distance matrix analysis, structure and sequence conservation analysis, normal mode analysis, principal component analysis of heterogeneous structure data, and correlation network analysis from normal mode and molecular dynamics data.  In addition, various utility functions are provided to enable the statistical and graphical power of the R environment to work with biological sequence and structural data.  Please refer to the URLs below for more information.
+Description: Utilities to process, organize and explore protein structure,
+    sequence and dynamics data. Features include the ability to read and write
+    structure, sequence and dynamic trajectory data, perform sequence and structure
+    database searches, data summaries, atom selection, alignment, superposition,
+    rigid core identification, clustering, torsion analysis, distance matrix
+    analysis, structure and sequence conservation analysis, normal mode analysis,
+    principal component analysis of heterogeneous structure data, and correlation
+    network analysis from normal mode and molecular dynamics data. In addition,
+    various utility functions are provided to enable the statistical and graphical
+    power of the R environment to work with biological sequence and structural data.
+    Please refer to the URLs below for more information.
 Maintainer: Barry Grant <bjgrant@umich.edu>
 License: GPL (>= 2)
 URL: http://thegrantlab.org/bio3d/, http://bitbucket.org/Grantlab/bio3d
+RoxygenNote: 5.0.1
 NeedsCompilation: yes
-Packaged: 2015-12-12 00:23:07 UTC; xinqyao
+Packaged: 2016-09-30 03:01:54 UTC; xinqyao
 Repository: CRAN
-Date/Publication: 2015-12-12 09:11:54
+Date/Publication: 2016-09-30 23:15:33

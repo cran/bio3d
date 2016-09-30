@@ -6,7 +6,8 @@
 }
 \usage{
 filter.rmsd(xyz = NULL, rmsd.mat = NULL, cutoff = 0.5,
-            fit = TRUE, verbose = TRUE, inds = NULL, \dots)
+            fit = TRUE, verbose = TRUE, inds = NULL, method = "complete",
+            \dots)
 }
 \arguments{
   \item{xyz}{ a numeric matrix or list object containing multiple
@@ -22,6 +23,8 @@ filter.rmsd(xyz = NULL, rmsd.mat = NULL, cutoff = 0.5,
   \item{inds}{ a vector of indices that selects the elements of
     \code{xyz} upon which the calculation should be based. By default, 
     all the non-gap sites in \code{xyz}. }
+  \item{method}{ the agglomeration method to be used. See function 
+    \code{\link{hclust}} for more information. }
   \item{\dots}{ additional arguments passed to and from functions. } 
 }
 \details{
@@ -47,11 +50,11 @@ filter.rmsd(xyz = NULL, rmsd.mat = NULL, cutoff = 0.5,
 }
 \examples{
 \dontrun{
-data(kinesin)
-attach(kinesin, warn.conflicts=FALSE)
+attach(kinesin)
+
 k <- filter.rmsd(xyz=pdbs,cutoff=0.5)
 pdbs$id[k$ind]
-plot(k$tree, ylab="RMSD")
+hclustplot(k$tree, h=0.5, ylab="RMSD")
 abline(h=0.5, col="gray")
 
 detach(kinesin)

@@ -1,11 +1,11 @@
-view.cna <- function(x, pdb, layout=layout.cna(x, pdb, k=3),
+vmd.cna <- function(x, pdb, layout=layout.cna(x, pdb, k=3),
                      col.sphere=NULL, 
                      col.lines="silver",
                      weights=NULL,
                      radius=table(x$communities$membership)/5,
                      alpha=1,
                      vmdfile="network.vmd", pdbfile="network.pdb",
-                     launch=FALSE) {
+                     full=FALSE, launch=FALSE, exefile=NULL, ...) {
 
   ## Draw a cna network in VMD
 
@@ -30,7 +30,7 @@ view.cna <- function(x, pdb, layout=layout.cna(x, pdb, k=3),
   
   if(is.null(col.sphere)) {
     ## Get colors from network and convert to 0:17 VMD color index
-    col.sphere <- match(igraph::V(x$community.network)$color, vmd.colors())-1
+    col.sphere <- match(igraph::V(x$community.network)$color, vmd_colors())-1
   } else {
     ## Check supplied color(s) will work in VMD
     if(!all(col.sphere %in% c(0:17))) {
@@ -105,23 +105,67 @@ view.cna <- function(x, pdb, layout=layout.cna(x, pdb, k=3),
   ##- Lets get drawing
   ##radius = V(x$community.network)$size
   ###radius = table(x$raw.communities$membership)/5
-  scr <- c(scr, .vmd.sphere( layout, radius=radius, col=col.sphere))
+  if(!full)  {
+      scr <- c(scr, .vmd.sphere( layout, radius=radius, col=col.sphere))
 
-  ## Edges
-###edge.list <- unlist2(get.adjlist(x$community.network))
-###start.no <- as.numeric(names(edge.list))
-###end.no <- as.numeric((edge.list))
-###inds <- which(end.no > start.no)
-###start <- layout[start.no[inds],]
-###end <- layout[end.no[inds],]
-  edge.list <- igraph::get.edges(x$community.network, 1:length(igraph::E(x$community.network)))
-  start <- layout[edge.list[,1],]
-  end <- layout[edge.list[,2],]
-  
-  ###weights=E(x$community.network)$weight ##/0.2
-  scr <- c(scr, .vmd.lines( start=start, end=end,
-                           radius=weights, col=col.lines))
+      ## Edges
+      ##edge.list <- unlist2(get.adjlist(x$community.network))
+      ##start.no <- as.numeric(names(edge.list))
+      ##end.no <- as.numeric((edge.list))
+      ##inds <- which(end.no > start.no)
+      ##start <- layout[start.no[inds],]
+      ##end <- layout[end.no[inds],]
+      edge.list <- igraph::get.edges(x$community.network, 1:length(igraph::E(x$community.network)))
+      start <- layout[edge.list[,1],]
+      end <- layout[edge.list[,2],]
+      
+      ## weights=E(x$community.network)$weight ##/0.2
+      scr <- c(scr, .vmd.lines(start=start, end=end,
+                               radius=weights, col=col.lines))
+  }
+      
+  ## full network
+  if(full) {
 
+      ## Calpha PDB
+      if(!all(pdb$atom$elety == "CA")) {
+          message("Trimming provided PDB to calpha atoms")
+          pdb.ca <- trim(pdb, "calpha")
+      }
+      else {
+          pdb.ca <- pdb
+      }
+
+      if(length(x$network[1]) != nrow(pdb.ca$atom))
+          stop("Mismatch between provided network and pdb")
+      
+      ## Edges
+      edge.list <- igraph::get.edges(x$network, 1:length(igraph::E(x$network)))
+      start <- matrix(pdb.ca$xyz[, atom2xyz(edge.list[,1]) ], ncol=3, byrow=TRUE)
+      end <- matrix(pdb.ca$xyz[, atom2xyz(edge.list[,2]) ], ncol=3, byrow=TRUE)
+
+      ## Edge colors and radius
+      col2 <- match(igraph::V(x$network)$color, vmd_colors())-1
+      names(col2) = 1:nrow(pdb.ca$atom)
+      
+      col3 = apply(edge.list, 1, function(x) {
+          if(col2[x[1]]==col2[x[2]])
+              col2[x[1]]
+          else
+              16 ## black
+      })
+      
+      rad3 = apply(edge.list, 1, function(x) {
+          if(col2[x[1]]==col2[x[2]])
+              0.1
+          else
+              0.25
+      })
+      
+      scr2 = .vmd.lines(start=start, end=end, radius=rad3, col=col3)
+      scr = c(scr, scr2)
+
+  }
   cat(scr, file=vmdfile, sep="")
 
   ## Output a PDB file with chain color
@@ -132,18 +176,29 @@ view.cna <- function(x, pdb, layout=layout.cna(x, pdb, k=3),
   ## Launch option ...
   ## vmd -pdb network.pdb -e network.vmd
   if(launch) {
-    cmd <- paste("vmd", pdbfile, "-e", vmdfile)
+
+    ## Find default path to external program
+    if(is.null(exefile)) {
+      exefile <- 'vmd'
+      if(nchar(Sys.which(exefile)) == 0) {
+        os1 <- Sys.info()["sysname"]
+        exefile <- switch(os1,
+          Windows = 'vmd.exe', # to be updated
+          Darwin = '/Applications/VMD\\ 1.9.*app/Contents/MacOS/startup.command',
+          'vmd' )
+      }
+    }
+    if(nchar(Sys.which(exefile)) == 0)  
+      stop(paste("Launching external program failed\n",
+                 "  make sure '", exefile, "' is in your search path", sep=""))
+     
+    cmd <- paste(exefile, pdbfile, "-e", vmdfile)
 
     os1 <- .Platform$OS.type
     if (os1 == "windows") {
       shell(shQuote(cmd))
     } else{
-      if(Sys.info()["sysname"]=="Darwin") {
-        system(paste("/Applications/VMD\\ 1.9.*app/Contents/MacOS/startup.command",pdbfile, "-e", vmdfile))
-      }
-      else{
-        system(cmd)
-      }
+      system(cmd)
     }
   }
 }

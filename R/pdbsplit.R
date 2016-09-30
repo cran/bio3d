@@ -33,12 +33,14 @@ function(pdb.files, ids=NULL, path="split_chain", overwrite=TRUE, verbose=FALSE,
   }
 
   if(!verbose)
-    pb <- txtProgressBar(min=0, max=length(pdb.files), style=3)
-  
+    ## Initialize progress bar
+    pb <- .init.pb(ncore, min=0, max=length(pdb.files))
+
   if(!file.exists(path)) 
      dir.create(path)
   
   "splitOnePdb" <- function(i, pdb.files, ids, path, overwrite, verbose, ...) {
+
     out <- c(); skipped <- c(); unused <- NULL;
     if(!overwrite && !verbose) {
       chains <- quickscan(pdb.files[i])
@@ -91,13 +93,13 @@ function(pdb.files, ids=NULL, path="split_chain", overwrite=TRUE, verbose=FALSE,
     if (length(chains) > 0) {
       for (j in 1:length(chains)) {
         if(!verbose)
-          setTxtProgressBar(pb, (i-1)+(j/length(chains)))
+          .update.pb(pb, step=1/length(chains))
         
         ##if (!is.na(chains[j])) {
           new.pdb <- NULL
           
           sel <- atom.select(pdb, chain=chains[j], verbose=verbose) #====
-          new.pdb <- trim.pdb(pdb, sel, sse=FALSE)
+          new.pdb <- trim.pdb(pdb, sel, sse=TRUE)
 
           ## Multi-model records
           if (nrow(pdb$xyz)>1) {
@@ -111,25 +113,38 @@ function(pdb.files, ids=NULL, path="split_chain", overwrite=TRUE, verbose=FALSE,
               new.name <- file.path(path, new.name)
               
               xyz <- pdb$xyz[k, sel$xyz]
-              write.pdb(new.pdb, file = new.name, xyz=xyz)
-              out <- c(out, new.name)
+
+              if(length(new.pdb$xyz) > 0) {
+                write.pdb(new.pdb, file = new.name, xyz=xyz, sse=TRUE)
+                out <- c(out, new.name)
+              }
+              else {
+                warning(paste0(basename(new.name), " has 'xyz' of length zero"))
+              }
             }
           }
           else {
             new.name <- paste0(basename.pdb(pdb.files[i], mk4=mk4), "_", chains[j], ".pdb") 
             new.name <- file.path(path, new.name)
 
-            if(!file.exists(new.name) || overwrite)
-              write.pdb(new.pdb, file = new.name)
-
-            out <- c(out, new.name)
+            if(length(new.pdb$xyz) > 0) {
+              if(!file.exists(new.name) | overwrite )
+                write.pdb(new.pdb, file = new.name, sse=TRUE)
+              
+              out <- c(out, new.name)
+            }
+            else {
+              warning(paste0(basename(new.name), " has 'xyz' of length zero"))
+            }
           }
         ##}
       }
     }
-    if(!verbose)
-      setTxtProgressBar(pb, i)
-    
+    else {
+      if(!verbose) .update.pb(pb, step=1)
+    }
+
+    gc()
     return( list(out=out, unused=unused, skipped=skipped) )
   }
   
@@ -149,9 +164,11 @@ function(pdb.files, ids=NULL, path="split_chain", overwrite=TRUE, verbose=FALSE,
     skipped <- c(skipped, tmp.out$skipped)
   }
 
-  if(!verbose)
-    close(pb)
-  
+  if(!verbose) {
+    .update.pb(pb)
+    .close.pb(pb)
+  }
+ 
   if(!is.null(ids)) {
     ids.used <- NULL; nonmatch <- NULL
     if(length(outfiles)>0) {
