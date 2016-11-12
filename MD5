@@ -1,4 +1,4 @@
-1c08104c32ba11fc4da4da9df73d8f55 *DESCRIPTION
+0bf2def862cc66ab68ad907102f170fe *DESCRIPTION
 068f656b098eb007fd78d661305ef372 *NAMESPACE
 150254df26c48e15dead1d2f56b585aa *NEWS
 4cb5dfe4fa115e3d65a9e6b7a6e3c22a *R/RcppExports.R
@@ -29,7 +29,7 @@ a178e265e7a83136b94398d6d2e85411 *R/as.xyz.R
 46dc0dd398308a651bdb007b88416647 *R/bhattacharyya.R
 c5af3447d6746e0544490d7fdb9040b8 *R/binding.site.R
 d216833257b72d8919350d6e84f1842b *R/biounit.R
-7976b2ab83956c2acc1897f676385a18 *R/blast.pdb.R
+45ccba2d4cabc9a77b779fa00f4bfdc0 *R/blast.pdb.R
 e30e78857cdcc09122a065928319fd1f *R/bounds.R
 e1889cc2c0e3a6f4d6edb848d252d8fa *R/bounds.sse.R
 abae5f5457ba8820a71069b82b8e5600 *R/build.hessian.R
@@ -38,7 +38,7 @@ d466ea5cf94d1383b2df41cb5e695735 *R/bwr.colors.R
 f76fdfebb462a16c54606a7907fceed1 *R/chain.pdb.R
 158d1cde1eda06147b7bfb36bf08e583 *R/check.utility.R
 1ac033e8000d25ab0f9284971ec5457f *R/clean.pdb.R
-600d028df567b876ee7bf94eb905148b *R/cmap.R
+77bf6f8c3ed1e2ae5b82da30c5fea159 *R/cmap.R
 ecaa84fd34f5e9c4953e20e2b6cdb1fa *R/cmap.pdb.R
 59bd3ce7f893392b424cb7625b6a5b38 *R/cna.R
 7c5098bfa91b96cfb2847c7794883862 *R/cna.dccm.R
@@ -83,9 +83,9 @@ ee379599d8254472d6df82f8ff595439 *R/fit.xyz.R
 1969f6a1b39e4ebd9328ff9d4fd14db5 *R/formula2mass.R
 228a1e2d7bae2b06cb955dc2849228e8 *R/gap.inspect.R
 7e1043b7e2ece35717f40879ceeeef54 *R/geostas.R
-f5135bc65e364ac8cea39ddd30634877 *R/get.blast.R
+dcc1ac571943fd8938107e7dc5810bea *R/get.blast.R
 fb83cdc895cff79e35fc5ed430ff1a8f *R/get.pdb.R
-97eb28e060ded4ad043a28704dd0633b *R/get.seq.R
+57ea1abd333be1e8716f20d9e921b334 *R/get.seq.R
 47addc7fcd0744086985af22e2b862cd *R/gnm.R
 1ab7a0ea647f9cbd5794af9d3636cd0f *R/gnm.pdbs.R
 a4650a718115f929a223abf936958772 *R/hclustplot.R
@@ -147,7 +147,7 @@ c8a8078b304b5af5caedc480513d683d *R/plot.blast.R
 dccf527bd23922cbef6ff1209b9496b0 *R/plot.fluct.R
 76eb4ca559a6d9c93d795cfb3b9f0262 *R/plot.geostas.R
 dae1f890d18936dffe91bdf08830e114 *R/plot.hmmer.R
-81537d4c1083fbcc39f4698c5ceee2b7 *R/plot.matrix.loadings.R
+9f02d885953132501f4dcb805d3a5b51 *R/plot.matrix.loadings.R
 119543f73aa719e47a54ee1b1418fc94 *R/plot.nma.R
 0d553d0c777fba08972d519c854d12d0 *R/plot.pca.R
 ceca3cfe8aadbc4ac81d8cb23ef8f665 *R/plot.pca.loadings.R
@@ -202,7 +202,7 @@ d15303ebd81be44059c949932085e57f *R/seqidentity.R
 531830c2dd096bcf7078661cf9d75e90 *R/setup.ncore.R
 b265ab922ed09417822b6bce32d57452 *R/sip.R
 573372f565bb10e9a426d37d68b9eee3 *R/sse.bridges.R
-d3c99ef1cb519fced45d3482b0a1c177 *R/store.atom.R
+324b201de4f40e9617eb8f80d6ad8c6d *R/store.atom.R
 4ad767749c167d3f8dd2dc6c30325e23 *R/stride.R
 b99422fe7b442863aca6042552724b74 *R/struct.aln.R
 02b9229d7c25dfe12356d97abc055c25 *R/summary.cna.R
@@ -227,7 +227,7 @@ f8814744b4feae467bc874c5f617fe25 *R/vmd_colors.R
 f7ec0b5657fb192ad6876aaa02999ff3 *R/write.fasta.R
 1e1b0227e7768f3147548f04d61d7032 *R/write.mol2.R
 b1e0b5a0e37995a494cf65c7b7cb78b7 *R/write.ncdf.R
-c2c64ecf444a1e59413d3d250e48c4c9 *R/write.pdb.R
+5e71a5d248037dba326dfccf69a7a4fe *R/write.pdb.R
 548106c98ad8bf2b3b63686d9b7947ad *R/write.pir.R
 a97c9312ea73b4e105a583707d4a5578 *R/write.pqr.R
 9e57938c5fa7ce30265b29e8750f4810 *R/xyz2atom.R
@@ -288,7 +288,7 @@ c50d66e01ab90e135a211081f819a63c *man/atom2mass.Rd
 71788475bc11e8b02f7ee4390ba439e7 *man/basename.pdb.Rd
 29c5ac74c5b69f1fabfa396f54592f46 *man/bhattacharyya.Rd
 2b016053e31cdc45a613b567ba314ea9 *man/binding.site.Rd
-5555b360f7bad4e016c08e13ffa691c2 *man/bio3d.package.Rd
+2b5a6bb93ec25533dabbd794e059c376 *man/bio3d.package.Rd
 dbd7e0074496cc7b17b14d530c12ffdf *man/biounit.Rd
 b66ee654b1cfeff0e61dbb99a941816f *man/blast.pdb.Rd
 9ca205b70db6da407022e6e8e3df592b *man/bounds.Rd
@@ -391,7 +391,7 @@ a14759a107ac7956f786117a70be390f *man/plot.fasta.Rd
 7138ba6823879c2483e3a8cea972aeb9 *man/plot.fluct.Rd
 1d336234f2c664954aa84a2241c4b9dc *man/plot.geostas.Rd
 a3f5d4c511425d3eda4cc9f50b73923a *man/plot.hmmer.Rd
-8040484d611abd369628ec19067f8730 *man/plot.matrix.loadings.Rd
+7a25f93cd3c5ae730f8892684c265564 *man/plot.matrix.loadings.Rd
 cde80be2caee0007d3aae194170a4373 *man/plot.nma.Rd
 2824401b7330fc6cc510a970c431570a *man/plot.pca.Rd
 c6d01fbaab9a9a055e0358186a5215d8 *man/plot.pca.loadings.Rd
@@ -458,7 +458,7 @@ d30ec79397c9c31e5639212e3287dd58 *src/RcppExports.cpp
 1358a5ca323fe8cbd5883151808c2838 *src/convert.h
 4311765ab076cb1f4b1e96adc4b29c18 *src/gzstream.cpp
 c32e16a810b222875c935750f705e675 *src/gzstream.h
-c6d9867eebb95e07e20a3cdb9dffc387 *src/read_cif.cpp
+d96c80140a7bb93655067b4554868bcf *src/read_cif.cpp
 6580911a047279f2ce6cba55b91b9779 *src/read_crd.cpp
 399ca8db09731613ece456c7ab4209e5 *src/read_pdb.cpp
 fbac5722a584bdd47928b5ffebfba3c4 *src/read_prmtop.cpp
