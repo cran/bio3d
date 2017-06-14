@@ -1,6 +1,6 @@
 Package: bio3d
 Title: Biological Structure Analysis
-Version: 2.3-1
+Version: 2.3-2
 Authors@R: c(person("Barry", "Grant", role=c("aut", "cre"),
                      email="bjgrant@umich.edu"),
              person("Xin-Qiu", "Yao", role="aut"),
@@ -33,6 +33,6 @@ License: GPL (>= 2)
 URL: http://thegrantlab.org/bio3d/, http://bitbucket.org/Grantlab/bio3d
 RoxygenNote: 5.0.1
 NeedsCompilation: yes
-Packaged: 2016-11-10 20:41:30 UTC; xinqyao
+Packaged: 2017-06-13 01:07:11 UTC; xinqyao
 Repository: CRAN
-Date/Publication: 2016-11-12 00:26:53
+Date/Publication: 2017-06-14 23:30:37 UTC
