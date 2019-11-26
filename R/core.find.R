@@ -50,7 +50,8 @@ function(pdbs,
          write.pdbs = FALSE,
          outpath="core_pruned",
          ncore = 1,
-         nseg.scale = 1, ...) {
+         nseg.scale = 1,
+         progress = NULL, ...) {
 
   ##  Itterative core deffination for lsq fit optimisation
   ##  (core positions are those with low ellipsoid volume)
@@ -89,7 +90,7 @@ function(pdbs,
     pdbnum = c(1:(length(xyz.inds)/3))
 
   } else {
-    if( (is.list(pdbs)) && (class(pdbs)=="pdbs") ) {
+    if( (is.list(pdbs)) && (inherits(pdbs, "pdbs")) ) {
       xyz=pdbs$xyz
 
       xyz.inds <- which(apply(is.na( xyz ), 2, sum)==0)
@@ -134,6 +135,12 @@ function(pdbs,
   }
   
   while(length(res.still.in) > stop.at) {
+
+    ## edit for shiny version
+    if(!is.null(progress)) {
+      progress$inc(1/length(res.inds))
+    }
+    ## edit end
 
     # Core fitting, (core => pdbnum[ res.still.in ])
     fit.to = rep(FALSE,ncol(xyz.moved))

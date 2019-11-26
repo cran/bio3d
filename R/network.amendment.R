@@ -6,7 +6,7 @@ network.amendment <- function(x, membership, minus.log=TRUE){
      stop("igraph package missing: Please install, see: ?install.packages")
   }
 
-  if(class(x) != "cna"){
+  if(!inherits(x, "cna")){
     stop("Input x must be a 'cna' class object as obtained from cna()")
   }
 
@@ -80,7 +80,7 @@ network.amendment <- function(x, membership, minus.log=TRUE){
   
   cols=vmd_colors()
   
-  if(sum(x$community.cij)>0){
+#  if(sum(x$community.cij)>0){
     x$community.network <-  igraph::graph.adjacency(x$community.cij,
                                           mode="undirected",
                                           weighted=TRUE,
@@ -101,7 +101,7 @@ network.amendment <- function(x, membership, minus.log=TRUE){
     igraph::V(x$network)$size <- 1
     igraph::V(x$community.network)$size <- table(x$communities$membership)
 
-  }
+#  }
 
   return(x)
 }

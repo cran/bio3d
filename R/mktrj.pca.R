@@ -8,12 +8,17 @@
                         ... ) {     # args for write.pdb
 
   ## make a trjactory of atomic displacments along a given pc
-  if(class(pca)!="pca") {
+  if(!inherits(pca, "pca")) {
     stop("input should be a list object of class 'pca' (from 'pca.xyz')")
   }
 
-  if(is.null(file))
-    file <- paste("pc_", pc, ".pdb", sep="")
+  if(is.null(file)) {
+    if(length(pc) > 1) {
+       file <- paste("pc_", min(pc), "-", max(pc), ".pdb", sep="")
+    } else {
+       file <- paste("pc_", pc, ".pdb", sep="")
+    }
+  }
  
   if(!is.null(pdb)) {
      if(is.pdbs(pdb)) 
@@ -30,10 +35,12 @@
   ##- Bug fix: Fri Jun 15 14:49:24 EDT 2012
   ##  plus  <- apply(zcoor, 2, pca.z2xyz, pca)
   ##  minus <- apply( (-(zcoor)), 2, pca.z2xyz, pca)
+  plus  <- apply(zcoor, 2, z2xyz.pca, pca)
+  minus <- apply( (-(zcoor)), 2, z2xyz.pca, pca)
 
-  scor  <- function(x,u,m) { return(x*u+m) }
-  plus  <- sapply(c(zcoor), scor, u=pca$U[,pc], m=pca$mean)
-  minus <- sapply(c(-zcoor), scor, u=pca$U[,pc], m=pca$mean)
+##  scor  <- function(x,u,m) { return(x*u+m) }
+##  plus  <- sapply(c(zcoor), scor, u=pca$U[,pc], m=pca$mean)
+##  minus <- sapply(c(-zcoor), scor, u=pca$U[,pc], m=pca$mean)
 
   if(rock) {
     coor  <- cbind(pca$mean,
