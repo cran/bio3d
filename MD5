@@ -1,4 +1,4 @@
-099fc53a962af76bbd514b8f6dd40107 *DESCRIPTION
+905818a11f0b385e8b64909d4904df82 *DESCRIPTION
 ee54ff76ede0784386d6e5a248b77a7d *NAMESPACE
 df23e25f1b9982557507af3d7651ad76 *NEWS
 5d2c9874a418b707c4e12d96087fbe77 *R/RcppExports.R
@@ -87,7 +87,7 @@ ee379599d8254472d6df82f8ff595439 *R/fit.xyz.R
 7e1043b7e2ece35717f40879ceeeef54 *R/geostas.R
 8b391c9655430de000cdb6dfa8ee1348 *R/get.blast.R
 41a1e8d12c0efd27858a761de5cac412 *R/get.pdb.R
-a6ec794e4522572aa5f072138728f21f *R/get.seq.R
+f6f3c357563e656bfc9932c6d007667e *R/get.seq.R
 47addc7fcd0744086985af22e2b862cd *R/gnm.R
 1ab7a0ea647f9cbd5794af9d3636cd0f *R/gnm.pdbs.R
 a4650a718115f929a223abf936958772 *R/hclustplot.R
@@ -107,7 +107,7 @@ d6fd5c79cc8300c03b80f69ac8404bca *R/mask.dccm.R
 8919406e86f3472e4feed5dcb3037231 *R/mktrj.R
 9de0863253f48da4d6c43af988fbe42d *R/mktrj.enma.R
 7ba177c301ac5950f189337668d0b14c *R/mktrj.nma.R
-54cbd8f99af535a78ac81a66b9b294f2 *R/mktrj.pca.R
+b9666ca7dbb29a832950c980270417bd *R/mktrj.pca.R
 d7ed0d61455e1b71a749685e0b7a7894 *R/mono.colors.R
 f4fc89df3e865cf4220e6717fe500bdf *R/motif.find.R
 489983bdb7185d46ab76029409646ca2 *R/mustang.R
@@ -249,7 +249,7 @@ ff5d52ecf3f780cbc5c693e87895aacb *data/transducin.RData
 b7e58ea62baf621f669d3afd84de90f2 *demo/pdb.R
 b50546f526b9da77fa3d599ccc8f5fdf *inst/CITATION
 e241b7f611abf8631129416b2b2a6fca *inst/doc/bio3d_vignettes.Rmd
-4922253e303c87a093dfdefd63dfa4a9 *inst/doc/bio3d_vignettes.html
+db99bd072d0328756b68857191838ad8 *inst/doc/bio3d_vignettes.html
 ea4074c1ad01d8237901b03688f91fec *inst/examples/1dpx.pdb
 83ea2593e2c4021492c564f437f0072f *inst/examples/1hel.pdb
 7275ccf3f0ab303ae18f01617f420056 *inst/examples/aspirin.mol2
@@ -289,7 +289,7 @@ c50d66e01ab90e135a211081f819a63c *man/atom2mass.Rd
 71788475bc11e8b02f7ee4390ba439e7 *man/basename.pdb.Rd
 29c5ac74c5b69f1fabfa396f54592f46 *man/bhattacharyya.Rd
 2b016053e31cdc45a613b567ba314ea9 *man/binding.site.Rd
-a54576bbf98b5f5a58f3aa7ed148da81 *man/bio3d.package.Rd
+f4bcddc53ad66f18b1d7ecadd8511204 *man/bio3d.package.Rd
 dbd7e0074496cc7b17b14d530c12ffdf *man/biounit.Rd
 b8e1132221fee055350b579775130509 *man/blast.pdb.Rd
 9ca205b70db6da407022e6e8e3df592b *man/bounds.Rd
@@ -452,7 +452,7 @@ be9970ae86e689dd4770ce2b3b8deb90 *man/write.fasta.Rd
 9f23868cb6336228b1a59ba814014e5d *man/write.mol2.Rd
 7cd54623b9f863b4168a63d191b7b381 *man/write.ncdf.Rd
 36aeb1e09f1f685aead3ca2d2a572422 *man/write.pdb.Rd
-7f5780f0017857067eccc30c99b0b6a9 *man/write.pir.Rd
+625ceb8c4d935f7937e18c20349cfdbb *man/write.pir.Rd
 69a99c1725e03f159a4c112d53eabded *man/write.pqr.Rd
 19d931cc54e940b9125c68554d1d91c3 *src/Makevars
 44902fcb257ca863d0d518340acaa873 *src/RcppExports.cpp
