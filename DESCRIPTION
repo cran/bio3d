@@ -1,6 +1,6 @@
 Package: bio3d
 Title: Biological Structure Analysis
-Version: 2.4-1
+Version: 2.4-2
 Authors@R: c(person("Barry", "Grant", role=c("aut", "cre"),
                      email="bjgrant@ucsd.edu"),
              person("Xin-Qiu", "Yao", role="aut"),
@@ -14,7 +14,7 @@ VignetteBuilder: knitr
 LinkingTo: Rcpp
 Imports: Rcpp, parallel, grid, graphics, grDevices, stats, utils
 Suggests: XML, RCurl, lattice, ncdf4, igraph, bigmemory, knitr,
-        testthat (>= 0.9.1), httr, msa, Biostrings
+        rmarkdown, testthat (>= 0.9.1), httr, msa, Biostrings
 Depends: R (>= 3.1.0)
 LazyData: yes
 Description: Utilities to process, organize and explore protein structure,
@@ -30,9 +30,10 @@ Description: Utilities to process, organize and explore protein structure,
     Please refer to the URLs below for more information.
 Maintainer: Barry Grant <bjgrant@ucsd.edu>
 License: GPL (>= 2)
-URL: http://thegrantlab.org/bio3d/, http://bitbucket.org/Grantlab/bio3d
-RoxygenNote: 5.0.1
+URL: http://thegrantlab.org/bio3d/,
+        https://bitbucket.org/Grantlab/bio3d/
+RoxygenNote: 7.1.1
 NeedsCompilation: yes
-Packaged: 2020-01-20 20:27:07 UTC; xinqyao
+Packaged: 2021-05-10 03:59:25 UTC; xinqyao
 Repository: CRAN
-Date/Publication: 2020-01-21 07:50:21 UTC
+Date/Publication: 2021-05-11 07:02:15 UTC
