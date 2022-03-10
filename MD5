@@ -1,4 +1,4 @@
-1005a5e34e322b8c0b642a06a17ae30e *DESCRIPTION
+92c3ff61a7f98cf5f7b4d75b4ce479e7 *DESCRIPTION
 45cb41b55c7a199f4a53b89549099320 *NAMESPACE
 df23e25f1b9982557507af3d7651ad76 *NEWS
 5d2c9874a418b707c4e12d96087fbe77 *R/RcppExports.R
@@ -10,7 +10,7 @@ df23e25f1b9982557507af3d7651ad76 *NEWS
 4dd420d5576ff7b15385cb4e23070195 *R/aanma.pdb.R
 9203c05378158366800fbf1f4a9e9acd *R/aanma.pdbs.R
 8a2d7097e2f56c21e41f4532d20b41b9 *R/aln2html.R
-df1256cc99bbbd413860c6bc997851af *R/amsm.xyz.R
+5c8ebbfce8f16b6521644b2f5cb396c5 *R/amsm.xyz.R
 ef880390ae3f58420b0ab4121506c05b *R/angle.xyz.R
 8bbe09682fd79a8cdf9ecd409923f0c1 *R/arg_filter.R
 3870b339a62143463ffe0e037b41134f *R/as.fasta.R
@@ -54,7 +54,7 @@ adc8ba00d757ae235f46787889d12cca *R/community.aln.R
 7162e7da956bafb2c40385d31eb314a0 *R/community.tree.R
 6b063f818fa98667191a4069019c216d *R/consensus.R
 0530ddc97b7d04bcb2612fc117af0210 *R/conserv.R
-c64ddbcdf11184b7f20bb08c95722bcc *R/convert.pdb.R
+e167699e38ddeed0b09eb0c396075a8d *R/convert.pdb.R
 b32b403008982a8c148809adc06f8b98 *R/core.cmap.R
 f0bbfe1c4c4463dcafdc126619617acc *R/core.find.R
 5a2e60494f76459eeb447bbd65f584a9 *R/cov.nma.R
@@ -86,7 +86,7 @@ ee379599d8254472d6df82f8ff595439 *R/fit.xyz.R
 1969f6a1b39e4ebd9328ff9d4fd14db5 *R/formula2mass.R
 228a1e2d7bae2b06cb955dc2849228e8 *R/gap.inspect.R
 7e1043b7e2ece35717f40879ceeeef54 *R/geostas.R
-86047edc0502daf7e9cfe3828e283f49 *R/get.blast.R
+851bd26aa2a5f9fe7c37e2d5b3556376 *R/get.blast.R
 41a1e8d12c0efd27858a761de5cac412 *R/get.pdb.R
 7f6508bcf15d3df3218ef28113f5e57e *R/get.seq.R
 47addc7fcd0744086985af22e2b862cd *R/gnm.R
@@ -127,7 +127,7 @@ feda760575734d91fc5369f1294a703d *R/pca.array.R
 964e746cc789e91cccfdf3c2f79cfd5a *R/pca.pdbs.R
 84c8023e33a4752ca0044234df7ef9f8 *R/pca.tor.R
 0fafa8786086504978300303eab268c8 *R/pca.xyz.R
-aa2203381972bfc6c7d53022885d1c4a *R/pdb.annotate.R
+686f736ce04df6c11eb5b496e83e3eb1 *R/pdb.annotate.R
 92030f163f3d67913fb7a1b9b57be15a *R/pdb.pfam.R
 026945ae25900ec0a924501a99fafacc *R/pdb2aln.R
 c653c556af553f30ddaeaf2466a69a49 *R/pdb2aln.ind.R
@@ -180,7 +180,7 @@ c9f6375dde9166fb35832e0e7dd48fe7 *R/read.all.R
 23e0e05cbb55e57f91cf69b331f9b39a *R/read.crd.R
 e992c6a2601ea9188eb30f15d2023d4e *R/read.crd.amber.R
 5e91c75f612d033c3edf6eaf88312661 *R/read.crd.charmm.R
-2b859e33356a8d733724a69fb956d049 *R/read.dcd.R
+896bea942062f7f54d48cc1da50662c3 *R/read.dcd.R
 fc5751a6dc90b7345c5cff9b2f2dbb2c *R/read.fasta.R
 61fc2552fc4769508339662dd5b62b36 *R/read.fasta.pdb.R
 bc664fc717b560c83a3eee4d6972e4f7 *R/read.mol2.R
@@ -273,7 +273,7 @@ da8648797ac7625cb14af0741eb80340 *inst/matrices/custom.mat
 11a6667645407124ad81fbc0b5c8fe0e *inst/staticdocs/index.r
 84b94802d97473728f4c15cb759a2554 *man/aa.index.Rd
 b58366535e4316def8b4618edc13a951 *man/aa.table.Rd
-3c2731aa1146f06cf8747657bfe3dcb7 *man/aa123.Rd
+139e181206344995bd0d1d80c7d7659c *man/aa123.Rd
 6dc1b206df39ff99949a27f6212c475d *man/aa2index.Rd
 1a9206737603466d327ee69ec3a66c24 *man/aa2mass.Rd
 6eb71c3d14e610c32922f09a9b8a0846 *man/aanma.pdb.Rd
@@ -291,7 +291,7 @@ c50d66e01ab90e135a211081f819a63c *man/atom2mass.Rd
 71788475bc11e8b02f7ee4390ba439e7 *man/basename.pdb.Rd
 29c5ac74c5b69f1fabfa396f54592f46 *man/bhattacharyya.Rd
 2b016053e31cdc45a613b567ba314ea9 *man/binding.site.Rd
-87e8bd01372612166285da3e7f1c49da *man/bio3d.package.Rd
+123d052108d8423415de85b487786e42 *man/bio3d.package.Rd
 dbd7e0074496cc7b17b14d530c12ffdf *man/biounit.Rd
 4ce022e382b5ad08a4f764cd87d8f11e *man/blast.pdb.Rd
 9ca205b70db6da407022e6e8e3df592b *man/bounds.Rd
@@ -380,7 +380,7 @@ e436c1892ed7b3430ff6a6e9a9c98471 *man/pca.pdbs.Rd
 811cc4d61c4ca9b60bc88d7304ec2106 *man/pdbfit.Rd
 37131ba0bb18840fd787175d073735bc *man/pdbs2pdb.Rd
 9af1b77250c2376faf568991b2d2bb80 *man/pdbs2sse.Rd
-4df376e6d9caa6384ae2a63db6dad93a *man/pdbseq.Rd
+d89918dde86aff7cd1e03600f640a018 *man/pdbseq.Rd
 0f5f8241ff4eed029d4de0376d3d9451 *man/pdbsplit.Rd
 6d07b414a2896edf8527005aea0cb728 *man/pfam.Rd
 d4d0f0a5b0cd78d1068838bea9582675 *man/plot.bio3d.Rd
@@ -410,7 +410,7 @@ bbcd9a2272643a6a21624b9ac529026d *man/read.all.Rd
 debe46ba72c904999884f3341ab3e0bf *man/read.cif.Rd
 2019088967922f8588c3946894828f35 *man/read.crd.Rd
 23e20c7591353eb20ee10a13a5c2b2e5 *man/read.crd.amber.Rd
-18f77ab523572c2e13b3749a4c5a634c *man/read.crd.charmm.Rd
+5e836c57b76655c5883b56e19e96edfe *man/read.crd.charmm.Rd
 033136ba003643685b20aeb67fcf94fb *man/read.dcd.Rd
 0ee24dbc69145726044f89efe451a8f9 *man/read.fasta.Rd
 fbe9889d1abb5110a943a1c7a2c6c7d9 *man/read.fasta.pdb.Rd
@@ -449,12 +449,12 @@ eaa8ce55814e03c1b385a195b90f6a29 *man/uniprot.Rd
 6c6b8f23a003537ddebe105e5deed14a *man/vmd.cna.Rd
 2180250f10d808b67fb61cb50fea8e91 *man/vmd_colors.Rd
 1bd7706fbadf8fc9c50b0d6b66bc4fc8 *man/wrap.tor.Rd
-5a7e2af1e926232bd2a33395e2b6e438 *man/write.crd.Rd
+025a6e0fe1dc1651c8482b85c5965b54 *man/write.crd.Rd
 5b7f663c597744d07cd88628db85a122 *man/write.fasta.Rd
 9f23868cb6336228b1a59ba814014e5d *man/write.mol2.Rd
 bdba01d334d362c4d19eebe205766ab4 *man/write.ncdf.Rd
 36aeb1e09f1f685aead3ca2d2a572422 *man/write.pdb.Rd
-625ceb8c4d935f7937e18c20349cfdbb *man/write.pir.Rd
+8cf69a2a4f1ed623b799a6be1d2f2de8 *man/write.pir.Rd
 69a99c1725e03f159a4c112d53eabded *man/write.pqr.Rd
 19d931cc54e940b9125c68554d1d91c3 *src/Makevars
 44902fcb257ca863d0d518340acaa873 *src/RcppExports.cpp
@@ -490,7 +490,7 @@ cf8eea920886aee022a6364974d74d7f *tests/testthat/test-nma.R
 049cd8b11592a79053243d7ea1071045 *tests/testthat/test-nma.pdbs.R
 baf983dfe1b2cdc7d191936c5b90fa84 *tests/testthat/test-overlap.R
 40ceba65a3f1831a50bd9807b54285da *tests/testthat/test-pca.R
-7a7fd7bde47a838bbdd16bff84baaa94 *tests/testthat/test-pdb.annotate.R
+3364ee84fbe5ba73065ee0d42aa12b29 *tests/testthat/test-pdb.annotate.R
 b0a56a2947afca64021c5d6fbd15f106 *tests/testthat/test-pdbsplit.R
 947ad244025c6845d08f5c748a973fd7 *tests/testthat/test-read.all.R
 1cd2162d0c7bdf7bb7baf644c38dc51c *tests/testthat/test-read.cif.R
