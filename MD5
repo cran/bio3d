@@ -1,10 +1,10 @@
-92c3ff61a7f98cf5f7b4d75b4ce479e7 *DESCRIPTION
+4efffc2e781e8303c2215883e4e254b1 *DESCRIPTION
 45cb41b55c7a199f4a53b89549099320 *NAMESPACE
-df23e25f1b9982557507af3d7651ad76 *NEWS
+4420661442bd7b10ad6b4fad2b0c447e *NEWS.md
 5d2c9874a418b707c4e12d96087fbe77 *R/RcppExports.R
 5e199f7bdb3b2dac728d499af72a66cd *R/aa123.R
 3a1c88e13bfe0be7c84120618822e090 *R/aa2index.R
-5e13a692c22b3737ee31536557624864 *R/aa2mass.R
+9001e662a699bd605fd71d37ab6b783c *R/aa2mass.R
 4885bccc6c6f90ae732f4228e4d2982d *R/aa321.R
 136ef786c6ea8b94ac8e6c38316a32cd *R/aanma.R
 4dd420d5576ff7b15385cb4e23070195 *R/aanma.pdb.R
@@ -45,7 +45,7 @@ acbd558702c931c73a8b0040cb21ca12 *R/cmap.pdb.R
 59bd3ce7f893392b424cb7625b6a5b38 *R/cna.R
 7c5098bfa91b96cfb2847c7794883862 *R/cna.dccm.R
 b434f392be51d2d4f00046046b07e547 *R/cna.ensmb.R
-0f2b585f659d99f542ae9f221135fc23 *R/cnapath.R
+6873e0e38c0b6b9416381cb9d1196f07 *R/cnapath.R
 6624ac64efb374dd2e0896326ea811f9 *R/com.R
 e00189a7a762151be9f33223a236a63c *R/com.pdb.R
 c2fdd1f28bdef7d151e51b340a84f278 *R/com.xyz.R
@@ -83,12 +83,12 @@ ef71c2e6b7602fffefa6e0470d6cf45b *R/filter.dccm.R
 5819acbe37a406c25ed69b5068b428f3 *R/filter.rmsd.R
 ee379599d8254472d6df82f8ff595439 *R/fit.xyz.R
 7f0c0d6133252ca6896fd8f6d9cbc369 *R/fluct.nma.R
-1969f6a1b39e4ebd9328ff9d4fd14db5 *R/formula2mass.R
+0de666eb85a3f7f72b94bd37b15791ed *R/formula2mass.R
 228a1e2d7bae2b06cb955dc2849228e8 *R/gap.inspect.R
 7e1043b7e2ece35717f40879ceeeef54 *R/geostas.R
 851bd26aa2a5f9fe7c37e2d5b3556376 *R/get.blast.R
 41a1e8d12c0efd27858a761de5cac412 *R/get.pdb.R
-7f6508bcf15d3df3218ef28113f5e57e *R/get.seq.R
+6485e39f2963c8b0fa1fcc157d6ad3cf *R/get.seq.R
 47addc7fcd0744086985af22e2b862cd *R/gnm.R
 1ab7a0ea647f9cbd5794af9d3636cd0f *R/gnm.pdbs.R
 a4650a718115f929a223abf936958772 *R/hclustplot.R
@@ -108,7 +108,7 @@ d6fd5c79cc8300c03b80f69ac8404bca *R/mask.dccm.R
 8919406e86f3472e4feed5dcb3037231 *R/mktrj.R
 9de0863253f48da4d6c43af988fbe42d *R/mktrj.enma.R
 7ba177c301ac5950f189337668d0b14c *R/mktrj.nma.R
-b9666ca7dbb29a832950c980270417bd *R/mktrj.pca.R
+8e53c99a9c6385c3d37c0fd4f6170777 *R/mktrj.pca.R
 d7ed0d61455e1b71a749685e0b7a7894 *R/mono.colors.R
 f4fc89df3e865cf4220e6717fe500bdf *R/motif.find.R
 489983bdb7185d46ab76029409646ca2 *R/mustang.R
@@ -180,7 +180,7 @@ c9f6375dde9166fb35832e0e7dd48fe7 *R/read.all.R
 23e0e05cbb55e57f91cf69b331f9b39a *R/read.crd.R
 e992c6a2601ea9188eb30f15d2023d4e *R/read.crd.amber.R
 5e91c75f612d033c3edf6eaf88312661 *R/read.crd.charmm.R
-896bea942062f7f54d48cc1da50662c3 *R/read.dcd.R
+fd8e9b898c250ccfe77782489eed48b8 *R/read.dcd.R
 fc5751a6dc90b7345c5cff9b2f2dbb2c *R/read.fasta.R
 61fc2552fc4769508339662dd5b62b36 *R/read.fasta.pdb.R
 bc664fc717b560c83a3eee4d6972e4f7 *R/read.mol2.R
@@ -209,7 +209,7 @@ b265ab922ed09417822b6bce32d57452 *R/sip.R
 4ad767749c167d3f8dd2dc6c30325e23 *R/stride.R
 b99422fe7b442863aca6042552724b74 *R/struct.aln.R
 02b9229d7c25dfe12356d97abc055c25 *R/summary.cna.R
-262055ae077cb8cb99bb8a239dace045 *R/summary.cnapath.R
+bd03b69f4fed8a847683eb614adabf48 *R/summary.cnapath.R
 c75b67a9b7274163e06567328630a4a2 *R/summary.pdb.R
 9592f26c110e4456bc5712d123b80848 *R/torsion.pdb.R
 02ecdf3e7234170d2cc17cefef944ac4 *R/torsion.xyz.R
@@ -291,7 +291,7 @@ c50d66e01ab90e135a211081f819a63c *man/atom2mass.Rd
 71788475bc11e8b02f7ee4390ba439e7 *man/basename.pdb.Rd
 29c5ac74c5b69f1fabfa396f54592f46 *man/bhattacharyya.Rd
 2b016053e31cdc45a613b567ba314ea9 *man/binding.site.Rd
-123d052108d8423415de85b487786e42 *man/bio3d.package.Rd
+fe0ea6d89944b4645f9fcff171b0c930 *man/bio3d.package.Rd
 dbd7e0074496cc7b17b14d530c12ffdf *man/biounit.Rd
 4ce022e382b5ad08a4f764cd87d8f11e *man/blast.pdb.Rd
 9ca205b70db6da407022e6e8e3df592b *man/bounds.Rd
@@ -312,7 +312,7 @@ a452eb11788c87bb9691a661d345d056 *man/consensus.Rd
 d75b4dd2fd167c244c62d2f2dcd51967 *man/conserv.Rd
 2b82724e66f9241d2447506aa0aeba67 *man/convert.pdb.Rd
 32847e4b713b4bafa54b3aec1105dd3c *man/core.cmap.Rd
-9c678cce60f3e35238c0084148bd9c0b *man/core.find.Rd
+492f806e1cdce14dd4b722611400eb14 *man/core.find.Rd
 599c676a63178db798ce860fe23d5fa9 *man/cov.nma.Rd
 8f42632b8d3049280b4c636c7cc5eead *man/covsoverlap.Rd
 c7152000fe9db3ad35b66ca4583ee5d7 *man/dccm.Rd
@@ -457,7 +457,7 @@ bdba01d334d362c4d19eebe205766ab4 *man/write.ncdf.Rd
 8cf69a2a4f1ed623b799a6be1d2f2de8 *man/write.pir.Rd
 69a99c1725e03f159a4c112d53eabded *man/write.pqr.Rd
 19d931cc54e940b9125c68554d1d91c3 *src/Makevars
-44902fcb257ca863d0d518340acaa873 *src/RcppExports.cpp
+c05726c470c480cb2288fa04e5b81b64 *src/RcppExports.cpp
 1358a5ca323fe8cbd5883151808c2838 *src/convert.h
 4311765ab076cb1f4b1e96adc4b29c18 *src/gzstream.cpp
 c32e16a810b222875c935750f705e675 *src/gzstream.h
@@ -490,13 +490,13 @@ cf8eea920886aee022a6364974d74d7f *tests/testthat/test-nma.R
 049cd8b11592a79053243d7ea1071045 *tests/testthat/test-nma.pdbs.R
 baf983dfe1b2cdc7d191936c5b90fa84 *tests/testthat/test-overlap.R
 40ceba65a3f1831a50bd9807b54285da *tests/testthat/test-pca.R
-3364ee84fbe5ba73065ee0d42aa12b29 *tests/testthat/test-pdb.annotate.R
+b7e14fd839a2a66cae34fdecb4faa9ea *tests/testthat/test-pdb.annotate.R
 b0a56a2947afca64021c5d6fbd15f106 *tests/testthat/test-pdbsplit.R
 947ad244025c6845d08f5c748a973fd7 *tests/testthat/test-read.all.R
 1cd2162d0c7bdf7bb7baf644c38dc51c *tests/testthat/test-read.cif.R
 023023edfad99f9741fe5b952414d125 *tests/testthat/test-read.ncdf.R
 75f30d421298d40f771594fcb3d9b21f *tests/testthat/test-read.pdb.R
 61e0586230215210805dae1af57be23a *tests/testthat/test-rmsd.R
-87841a455963de938fc9552fc7bfcd3f *tests/testthat/test-seqaln.R
+64824d165b3cf6dced3f4236d2b993b4 *tests/testthat/test-seqaln.R
 6df4c57a5670a44aacc181a2e01b8b72 *tests/testthat/test-vector-funs.R
 c1ff9ff92aedf699779a4ea75a71ec35 *vignettes/bio3d_vignettes.Rmd
