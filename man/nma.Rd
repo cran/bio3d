@@ -74,6 +74,8 @@ plot(modes)
 ##- Ensemble NMA
 if(check.utility("muscle")) {
 
+try({
+
 ## Fetch PDB files and split to chain A only PDB files
 ids <- c("1a70_A", "1czp_A", "1frd_A", "1fxi_A", "1iue_A", "1pfd_A")
 files <- get.pdb(ids, split = TRUE, path = tempdir())
@@ -87,6 +89,10 @@ modes <- nma(pdbs, rm.gaps=FALSE)
 ## Plot fluctuation data
 plot(modes, pdbs=pdbs)
 
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 }

@@ -76,6 +76,7 @@ append = FALSE, verbose = FALSE, chainter = FALSE, file = "R.pdb")
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 # Read a PDB file
 pdb <- read.pdb( "1bg2" )
@@ -86,6 +87,10 @@ write.pqr(pdb=pdb, file = outfile)
 
 invisible( cat("\nSee the output file:", outfile, sep = "\n") )
 
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 \keyword{ IO }

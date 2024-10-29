@@ -90,6 +90,7 @@ dm(\dots)
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 ##--- Distance Matrix Plot
 pdb <- read.pdb( "4q21" )
@@ -119,7 +120,13 @@ plot(c, axis.tick.space=10,
      grid.col="black",
      xlab="Residue No. (4q21)", ylab="Residue No. (521p)")
 }
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
 }
+}
+
 
 \dontrun{
 ##-- Residue-wise distance matrix based on the

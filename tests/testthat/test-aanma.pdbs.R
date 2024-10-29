@@ -9,6 +9,8 @@ test_that("aanma based eNMA works", {
 
   skip_on_cran()
   skip_on_travis()
+  skip_if_not(check.utility("muscle"), 
+              message = "Need MUSCLE installed to run the test")
 
   "mysign" <- function(a,b) {
     if(all(sign(a)==sign(b)))

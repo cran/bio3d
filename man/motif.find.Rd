@@ -29,10 +29,16 @@ motif.find(motif, sequence)
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 aa.seq <- pdbseq( read.pdb( get.pdb("4q21", URLonly=TRUE) ) )
 motif = c("G....GKS")
 motif.find(motif, aa.seq)
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 \keyword{ utilities }

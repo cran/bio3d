@@ -7,7 +7,9 @@ plot.dccm <-function(x, resno=NULL, sse=NULL, colorkey=TRUE,
                      margin.segments=NULL, segment.col=vmd_colors(), 
                      segment.min=1, ...) {
 
-  requireNamespace("lattice", quietly = TRUE)
+  if(!requireNamespace("lattice", quietly = TRUE)) {
+    stop("Please install the lattice package from CRAN")
+  }
   colnames(x) = NULL; rownames(x)=NULL
 
   ##-- Customized axis tick labels

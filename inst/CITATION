@@ -1,12 +1,21 @@
-citHeader("To cite bio3d in publications use:")
-citEntry(entry = "article",
-         author = "Grant B.J.,  Rodrigues A.P.C.,  ElSawy K.M.,  McCammon J.A.,  Caves L.S.D.",
+bibentry(bibtype = "Article",
+         textVersion = "Grant, B.J. et al. (2006) Bioinformatics 22, 2695--2696.",
+         author = c(person(given = "B.J.",
+                           family = "Grant"),
+                    person(given = "A.P.C.",
+                           family = "Rodrigues"),
+                    person(given = "K.M.",
+                           family = "ElSawy"),
+                    person(given = "J.A.",
+                           family = "McCammon"),
+                    person(given = "L.S.D.",
+                           family = "Caves")),
          title = "Bio3D: An R package for the comparative analysis of protein structures.",
-	 journal = "Bioinformatics",
-         year   = "2006",
+         journal = "Bioinformatics",
+         year = "2006",
          volume = "22",
          pages = "2695--2696",
          month = "Nov",
          organization = "University of California, San Diego, La Jolla, CA 92093, USA.",
-         textVersion = "Grant, B.J. et al. (2006) Bioinformatics 22, 2695--2696.")
-citFooter("Original article and updates are available from http://thegrantlab.org/bio3d/")
+         mheader = "To cite bio3d in publications use:",
+         mfooter = "Original article and updates are available from http://thegrantlab.org/bio3d/")

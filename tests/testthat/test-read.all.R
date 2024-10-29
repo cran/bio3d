@@ -5,7 +5,9 @@ test_that("read.all() reads all/select PDB atoms properly", {
   ## Internet access required - test skipped
   skip_on_cran()
   skip_on_travis()
-
+  skip_if_not(check.utility("muscle"), 
+              message = "Need MUSCLE installed to run the test")
+  
   ## Test with 4 G-alpha PDB structures  
   pdbdir <- tempdir()
   suppressWarnings(

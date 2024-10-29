@@ -37,6 +37,8 @@ if (!requireNamespace("igraph", quietly = TRUE)) {
    message('Need igraph installed to run this example')
 } else {
 
+try({
+
 ##-- Build a CNA object
 pdb <- read.pdb("4Q21")
 modes <- nma(pdb)
@@ -55,6 +57,10 @@ plot(net.7, pdb)
 print(net)
 print(net.7)
 
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 }

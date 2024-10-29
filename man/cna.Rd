@@ -121,6 +121,8 @@ if (!requireNamespace("igraph", quietly = TRUE)) {
    message('Need igraph installed to run this example')
 } else {
 
+try({
+
 ##-- Build a correlation network from NMA results
 ## Read example PDB
 pdb <- read.pdb("4Q21")
@@ -136,6 +138,11 @@ cij <- dccm(modes)
 ## Build, and betweenness cluster, a network graph
 net <- cna(cij, cutoff.cij=0.35)
 #plot(net, pdb)
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 
 ## within VMD set 'coloring method' to 'Chain' and 'Drawing method' to Tube
 #vmd.cna(net, trim.pdb(pdb, atom.select(pdb,"calpha")), launch=TRUE )

@@ -66,6 +66,8 @@ struct.aln(fixed, mobile, fixed.inds=NULL, mobile.inds=NULL,
 
 if(check.utility("muscle")) {
 
+try({
+
      ## Stucture of PKA:
      a <- read.pdb("1cmk")
 
@@ -80,6 +82,11 @@ if(check.utility("muscle")) {
      rmsd(a$xyz, b$xyz, aln$a.inds$xyz, aln$b.inds$xyz, fit=TRUE)
      
      invisible( cat("\nSee the output files:", list.files(path, full.names = TRUE), sep="\n") )
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+} 
 }
 }
 

@@ -92,6 +92,7 @@ rot.lsq(xx, yy,
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 ##--- Read an alignment & Fit aligned structures
 aln  <- read.fasta(system.file("examples/kif1a.fa",package="bio3d"))
@@ -106,6 +107,11 @@ xyz <- fit.xyz( fixed  = pdbs$xyz[1,],
 
 #rmsd( xyz[, gaps$f.inds] )
 #rmsd( pdbs$xyz[, gaps$f.inds] )
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 \dontrun{
 ##-- Superpose again this time outputing PDBs
@@ -117,6 +123,8 @@ xyz <- fit.xyz( fixed = pdbs$xyz[1,],
                full.pdbs = TRUE)
 }
 \donttest{
+try({
+
 ##--- Fit two PDBs
 A <- read.pdb("1bg2")
 A.ind <- atom.select(A, resno=c(256:269), elety='CA')
@@ -127,6 +135,11 @@ B.ind <- atom.select(B, resno=c(257:270), elety='CA')
 xyz <- fit.xyz(fixed=A$xyz, mobile=B$xyz,
                fixed.inds=A.ind$xyz,
                mobile.inds=B.ind$xyz)
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 \dontrun{
 # Write out moved PDB

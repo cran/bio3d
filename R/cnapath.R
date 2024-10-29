@@ -60,6 +60,13 @@ cnapath <- function(cna, from, to=NULL, k=10, collapse=TRUE, ncore=NULL, ...) {
          coms <- names(paths[[1]])
          paths <- lapply(coms, function(x) do.call(c, lapply(paths, "[[", x)) )
          names(paths) <- coms 
+         if(length(from)>1 || length(to)>1) {
+           # sort paths
+           ordered.ind <- order(paths$dist)
+           paths$path <- paths$path[ordered.ind]
+           paths$epath <- paths$epath[ordered.ind]
+           paths$dist <- paths$dist[ordered.ind]
+         }
          class(paths) <- cls
       }
       if(sum(rm.inds)>0) {
@@ -128,14 +135,14 @@ cnapath <- function(cna, from, to=NULL, k=10, collapse=TRUE, ncore=NULL, ...) {
           if(length(A[[j]]$path) > i && isTRUE(all.equal(rootPath, A[[j]]$path[1:i]))) {
              nn = A[[j]]$path[i+1]
              ee = igraph::E(g)[igraph::'%--%'(spurNode, nn)]
-             if(length(ee)>0) g <- igraph::delete.edges(g, ee)
+             if(length(ee)>0) g <- igraph::delete_edges(g, ee)
           }
        }
        # Remove all edges that link to nodes on the root path (excluding the spur node)
        if(i > 1) {
           for(j in rootPath[-(length(rootPath))]) {
              ee = igraph::incident(g, j) 
-             if(length(ee)>0) g <- igraph::delete.edges(g, ee)
+             if(length(ee)>0) g <- igraph::delete_edges(g, ee)
           }
        }
 

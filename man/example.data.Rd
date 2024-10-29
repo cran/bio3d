@@ -30,15 +30,19 @@ data(hivp)
   Three objects from analysis of the \code{kinesin} and \code{transducin} sequence and structure
   data:
   \enumerate{
-    \item{pdbs}{ is a list of class \code{pdbs} containing aligned PDB
+    \item pdbs is a list of class \code{pdbs} containing aligned PDB
       structure data.  In the case of transducin this is the output of running 
-      \code{\link{pdbaln}} on a set of 53 G[alpha]i structures from the PDB database (see \code{pdbs$id} 
-      or \code{annotation} described below for details). The coordinates
-      are fitted onto the first structure based on \code{"core"} positions obtained from \code{\link{core.find}} and superposed using the function \code{\link{pdbfit}}. }
-    \item{core}{ is a list of class \code{"core"} obtained by running the
-      function \code{\link{core.find}} on the \code{pdbs} object as described above.}
-    \item{annotation}{ is a character matrix describing the nucleotide state and bound 
-      ligand species for each structure in \code{pdbs} as obtained from the function \code{\link{pdb.annotate}}.}
+      \code{\link{pdbaln}} on a set of 53 G[alpha]i structures from the PDB 
+      database (see \code{pdbs$id} or \code{annotation} described below for 
+      details). The coordinates are fitted onto the first structure based on 
+      \code{"core"} positions obtained from \code{\link{core.find}} and 
+      superposed using the function \code{\link{pdbfit}}.
+    \item core is a list of class \code{"core"} obtained by running the 
+      function \code{\link{core.find}} on the \code{pdbs} object as described 
+      above.
+    \item annotation is a character matrix describing the nucleotide state and 
+    bound ligand species for each structure in \code{pdbs} as obtained from the 
+    function \code{\link{pdb.annotate}}.
   }
 
   One object named \code{net} in the hivp example data stores the correlation 

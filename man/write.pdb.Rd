@@ -83,6 +83,7 @@ write.pdb(pdb = NULL, file = "R.pdb", xyz = pdb$xyz, type = NULL, resno = NULL,
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 # Read a PDB file
 pdb <- read.pdb( "1bg2" )
@@ -96,6 +97,11 @@ outfile = file.path(tempdir(), "eg.pdb")
 write.pdb(pdb=pdb, resno = nums, file = outfile)
 
 invisible( cat("\nSee the output file:", outfile, sep = "\n") )
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 \keyword{ IO }

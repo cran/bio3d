@@ -103,12 +103,18 @@
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 ## Plot of B-factor values along with secondary structure from PDB
 pdb <- read.pdb( "1bg2" )
 bfac <- pdb$atom[pdb$calpha,"b"]
 plot.bio3d(bfac, sse=pdb, ylab="B-factor", col="gray")
 points(bfac, typ="l")
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 
 \dontrun{
@@ -128,6 +134,7 @@ col="blue", lwd=2)
 
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 ## Plot 'aligned' data respecting gap positions
 attach(transducin)
@@ -142,6 +149,11 @@ plot.bio3d(pdbs$b, resno=pdb, sse=pdb, ylab="B-factor")
 plot.bio3d(pdbs$b, rm.gaps=TRUE, resno = pdb, sse=pdb, ylab="B-factor")
 
 detach(transducin)
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 
 ## Fancy secondary structure elements

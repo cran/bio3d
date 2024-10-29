@@ -50,9 +50,15 @@ call for its effects.
 \examples{
 \donttest{
    # PDB server connection required - testing excluded
+   try({
 
    pdb <- read.pdb("1a7l")
    clean.pdb(pdb)
+
+   }, silent=TRUE)
+   if(inherits(.Last.value, "try-error")) {
+      message("Need internet to run the example")
+   }  
 } 
 }
 \author{

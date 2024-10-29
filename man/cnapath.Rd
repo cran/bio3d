@@ -109,6 +109,8 @@ print.cnapath(pas)
 # Or, for the same effect,
 # summary(pa1, pa2, label=c("GTP", "GDP"))
 
+try({
+
 # replace node numbers with residue name and residue number in the PDB file
 pdb <- read.pdb("1tnd")
 pdb <- trim.pdb(pdb, atom.select(pdb, chain="A", resno=npdbs$resno[1, gaps.res$f.inds]))
@@ -116,6 +118,11 @@ print.cnapath(pas, pdb=pdb)
 
 # plot path length distribution and node degeneracy
 print.cnapath(pas, pdb = pdb, col=c("red", "darkgreen"), plot=TRUE)
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 
 # View paths in 3D molecular graphic with VMD
 #vmd.cnapath(pa1, pdb, launch = TRUE)

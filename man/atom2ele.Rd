@@ -50,6 +50,7 @@ atom2ele(atom.names)
 
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 ## Get atomic symbols from a PDB object with a customized data set
 pdb <- read.pdb("3RE0",verbose=FALSE)
@@ -62,6 +63,10 @@ atom2ele(lig)
 myelety <- data.frame(name = "CL2", symb = "Cl")
 atom2ele(lig, elety.custom = myelety)
 
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 \keyword{ utilities }

@@ -11,17 +11,17 @@
 \format{
  A list of 544 named indeces each with the following components:
  \enumerate{
-  \item{H}{ character vector: Accession number. }
-  \item{D}{ character vector: Data description. }
-  \item{R}{ character vector: LITDB entry number. }
-  \item{A}{ character vector: Author(s). }
-  \item{T}{ character vector: Title of the article. }
-  \item{J}{ character vector: Journal reference. }
-  \item{C}{ named numeric vector: Correlation coefficients of similar
+  \item H, character vector: Accession number. 
+  \item D, character vector: Data description. 
+  \item R, character vector: LITDB entry number. 
+  \item A, character vector: Author(s). 
+  \item T, character vector: Title of the article. 
+  \item J, character vector: Journal reference. 
+  \item C, named numeric vector: Correlation coefficients of similar
     indeces (with coefficients of 0.8/-0.8 or more/less). The
     correlation coefficient is calculated with zeros filled for missing
-    values. }
-  \item{I}{ named numeric vector: Amino acid index data. }
+    values. 
+  \item I, named numeric vector: Amino acid index data.
  }
 }
 \source{

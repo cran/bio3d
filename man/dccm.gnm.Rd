@@ -30,6 +30,11 @@ displayed in a graphical representation frequently termed a dynamical
 cross-correlation map, or DCCM. (See more details in \code{help(dccm.nma)}).
 }
 \examples{
+
+if(!requireNamespace("lattice", quietly=TRUE)) {
+   message("Need lattice installed to run this example")
+} else {
+
 ## Fetch stucture
 pdb <- read.pdb( system.file("examples/1hel.pdb", package="bio3d") )
    
@@ -43,6 +48,7 @@ cm <- dccm(modes)
 plot(cm, sse = pdb, contour = FALSE, col.regions = bwr.colors(20),
      at = seq(-1, 1, 0.1))
 
+}
 }
 \author{
 Xin-Qiu Yao & Lars Skjaerven

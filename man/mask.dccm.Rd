@@ -47,6 +47,10 @@ mask(\dots)
   \code{\link{dccm}}, \code{\link{atom.select}}
 }
 \examples{
+if(!requireNamespace("lattice", quietly=TRUE)) {
+   message("Need lattice installed to run this example")
+} else {
+
 ## Calculate DCCM
 pdb <- read.pdb( system.file("examples/1hel.pdb", package="bio3d") )
 cij <- dccm(nma(pdb))
@@ -68,5 +72,6 @@ b.inds <- atom.select(pdb.ca, resno=80:90)
 # Provide pdb object correspoding to input dccm
 cijm <- mask(cij, pdb.ca, a.inds, b.inds)
 plot(cijm)
+}
 }
 \keyword{ utilities }

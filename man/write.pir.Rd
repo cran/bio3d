@@ -44,6 +44,8 @@ write.pir(alignment=NULL, ids=NULL, seqs=alignment$ali,
 
 if(check.utility("muscle")) {
 
+try({
+
 ## Generate an input file for structural modeling of 
 ## transducin G-alpha subunit using the template 3SN6_A
 
@@ -64,6 +66,10 @@ write.pir(aln, pdb.file = c(pdb.file, ""), file = outfile)
 
 invisible( cat("\nSee the output file:", outfile, sep = "\n") )
 
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 }

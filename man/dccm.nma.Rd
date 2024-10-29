@@ -41,6 +41,10 @@
 \seealso{ \code{\link{nma}}, \code{\link{plot.dccm}} }
 \examples{
 
+if(!requireNamespace("lattice", quietly=TRUE)) {
+   message("Need lattice installed to run this example")
+} else {
+
 ## Fetch stucture
 pdb <- read.pdb( system.file("examples/1hel.pdb", package="bio3d") )
 
@@ -53,5 +57,7 @@ cm <- dccm.nma(modes)
 ## Plot correlation map
 plot(cm, sse = pdb, contour = FALSE, col.regions = bwr.colors(20),
      at = seq(-1, 1, 0.1))
+     
+}
 }
 \keyword{ analysis }

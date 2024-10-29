@@ -55,6 +55,7 @@ com(...)
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 ## Stucture of PKA:
 pdb <- read.pdb("3dnd")
@@ -73,6 +74,10 @@ com.xyz(xyz)
 ## with mass weighting
 com.xyz(xyz, mass=atom2mass(pdb$atom[inds$atom, "elety"]) )
 
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 
 \dontrun{

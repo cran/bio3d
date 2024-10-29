@@ -2,7 +2,9 @@ context("Testing basic operation with NetCDF trajectory")
 
 test_that("read.ncdf() and write.ncdf() works properly", {
    skip_on_cran()
-   
+   skip_if_not(requireNamespace("ncdf4", quietly=TRUE), 
+               message = "Need ncdf4 installed to run the test")
+  
    ##- Prepare files
    trjfile <- tempfile()
    file <- system.file("examples/hivp.dcd", package="bio3d")

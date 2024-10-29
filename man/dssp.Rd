@@ -78,7 +78,7 @@ stride(pdb, exefile = "stride", resno=TRUE)
   Frishman and Argos (1995) \emph{Proteins.}  \bold{3}, 566--579.
 
   For information on obtaining the \sQuote{STRIDE} program, see:\cr
-  \url{http://webclu.bio.wzw.tum.de/stride/},
+  \url{https://webclu.bio.wzw.tum.de/stride/install.html},
   or copy it from an installation of VMD.
 }
 \author{ Barry Grant, Lars Skjaerven (dssp.pdbs) }

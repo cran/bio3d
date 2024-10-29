@@ -34,6 +34,7 @@ rgyr(xyz, mass=NULL, ncore=1, nseg.scale=1)
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 # -- Calculate Rog of single structure
 pdb <- read.pdb("1bg2")
@@ -44,6 +45,11 @@ mass[substr(pdb$atom[,"elety"], 1, 1) == "O"] <- 16
 mass[substr(pdb$atom[,"elety"], 1, 1) == "S"] <- 32
 
 rgyr(pdb, mass)
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 
 \dontrun{

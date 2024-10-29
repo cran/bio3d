@@ -45,6 +45,7 @@ pdb.pfam(ids, best.only = TRUE, compact = TRUE)
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 # Fetch all annotation terms
 ids <- c("6Q21_B", "1NVW", "1P2U_A")
@@ -59,6 +60,10 @@ anno <- pdb.annotate(ids, unique=TRUE)
 # Fetch only specific terms
 pdb.annotate(ids, anno.terms = c("pfam", "ligandId", "citation"))
 
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 
 \dontrun{

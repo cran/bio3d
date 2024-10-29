@@ -41,11 +41,17 @@ chain.pdb(pdb, ca.dist = 4, bond=TRUE, bond.dist=1.5, blank = "X", rtn.vec = TRU
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 full.pdb <- read.pdb( get.pdb("5p21", URLonly=TRUE) )
 inds <- atom.select(full.pdb, resno=c(10:20,30:33))
 cut.pdb <- trim.pdb(full.pdb, inds)
 chain.pdb(cut.pdb)
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 \keyword{ utilities }

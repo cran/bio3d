@@ -98,6 +98,7 @@ plot.bio3d(pc.xray$au[,1], ylab="PC1 (A)")
 
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 ## Plot loadings in relation to reference structure 1TAG
 pdb <- read.pdb("1tag")
@@ -112,6 +113,11 @@ plot.bio3d(pc.xray$au[,1], resno, ylab="PC1 (A)", sse=tpdb)
 plot.bio3d(pc.xray$au[,2], resno, ylab="PC2 (A)", sse=tpdb)
 plot.bio3d(pc.xray$au[,3], resno, ylab="PC3 (A)", sse=tpdb)
 par(op)
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 
 \dontrun{

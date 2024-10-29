@@ -49,6 +49,7 @@ rmsd(a, b=NULL, a.inds=NULL, b.inds=NULL, fit=FALSE, ncore=1, nseg.scale=1)
 \examples{
 \donttest{
 # Redundant testing excluded
+try({
 
 # -- Calculate RMSD between two or more structures
 aln <- read.fasta(system.file("examples/kif1a.fa",package="bio3d"))
@@ -69,6 +70,10 @@ rmsd(a=pdbs$xyz[1,], b=pdbs, a.inds=inds$f.inds, b.inds=inds$f.inds, fit=TRUE)
 # RMSD without superposition
 rmsd(pdbs$xyz)
 
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 
 }

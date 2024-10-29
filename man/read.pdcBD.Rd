@@ -69,6 +69,7 @@ read.pdcBD(file, maxlines = 50000, multi = FALSE, rm.insert = FALSE,
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 # Read a PDB file
 pdb <- read.pdb( "1bg2" )
@@ -96,6 +97,11 @@ pdb$atom[,"resno"] <- nums - (nums[1] - 1)
 
 # Write out renumbered PDB file
 #write.pdb(pdb=pdb,file="eg.pdb")
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 \keyword{ IO }

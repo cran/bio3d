@@ -40,6 +40,10 @@
 \examples{
 \donttest{
 
+if(!requireNamespace("lattice", quietly=TRUE)) {
+   message("Need lattice installed to run this example")
+} else {
+
 ##-- Read example trajectory file
 trtfile <- system.file("examples/hivp.dcd", package="bio3d")
 trj <- read.dcd(trtfile)
@@ -69,6 +73,7 @@ cij <- dccm(pca, pc = -c(1:10))
 ## Plot DCCM
 plot(cij)
 
+}
 }
 }
 \keyword{ analysis }

@@ -30,11 +30,17 @@ In both \code{$helix} and \code{$sheet}, an additional
 \examples{
 \donttest{
    # PDB server connection required - testing excluded
+   try({
 
    pdb <- read.pdb("1a7l")
    sse <- pdb2sse(pdb)
    sse.ind <- bounds.sse(sse)
    sse.ind 
+
+   }, silent=TRUE)
+   if(inherits(.Last.value, "try-error")) {
+      message("Need internet to run the example")
+   }
 } 
 }
 \author{

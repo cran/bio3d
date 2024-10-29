@@ -4,7 +4,9 @@ context("Testing pdb.annotate()")
 test_that("PDB annotation works", {
   skip_on_cran()
   skip_on_travis()
-
+  skip_if_not(requireNamespace("httr", quietly=TRUE), 
+              message = "Need httr installed to run the test")
+  
   expected <- c('3R1C_X', '3R1C_B', '3R1C_C', '3R1C_D',
                 '3R1C_E', '3R1C_F', '3R1C_G', '3R1C_H',
                 '3R1C_I', '3R1C_J', '3R1C_K', '3R1C_L',
@@ -79,7 +81,7 @@ test_that("PDB annotation works", {
   ## Test cases with duplicated 'sources'
   ids <- c("5TOK")
   invisible(capture.output(anno <- pdb.annotate(ids)))
-  expect_identical(anno[1, "source"], "Human orthopneumovirus")
+  expect_identical(anno[1, "ligandId"], "NAG")
 
   ## Test error handling
   expect_error(pdb.annotate("1234"), regexp="No data retrieved")

@@ -53,6 +53,7 @@ torsion.pdb(pdb)
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 ##-- PDB torsion analysis
 pdb <- read.pdb( "1bg2" )
@@ -73,6 +74,11 @@ a <- torsion.xyz(m$xyz[1,],1)
 b <- torsion.xyz(m$xyz[2,],1)
 d <- wrap.tor(a-b)
 plot(m$resno[1,],d, typ="h")
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 \keyword{ utilities }

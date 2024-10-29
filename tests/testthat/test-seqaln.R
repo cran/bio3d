@@ -4,7 +4,9 @@ context("Testing seqaln")
 test_that("seqaln works", {
   skip_on_cran()
   skip_on_travis()
-
+  skip_if_not(check.utility("muscle"), 
+              message = "Need MUSCLE installed to run the test")
+  
   ## seqaln with one sequence. should remove gaps
   seqs <- c("X", "-", "-", "A", "C", "A", "G", "K", "-")
   suppressWarnings( aln <- seqaln(seqs) )

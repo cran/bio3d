@@ -29,6 +29,7 @@ orient.pdb(pdb, atom.subset = NULL, verbose = TRUE)
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 pdb <- read.pdb( "1bg2" )
 xyz <- orient.pdb(pdb)
@@ -45,6 +46,11 @@ xyz  <- orient.pdb(pdb, atom.subset=inds$atom)
 inds <- atom.select(pdb, resno=c(224:232), elety='CA')
 xyz  <- orient.pdb(pdb, atom.subset=inds$atom)
 #write.pdb(pdb, xyz = xyz, file = "mov3.pdb")
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 \keyword{ manip }

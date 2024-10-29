@@ -59,6 +59,7 @@ binding.site(a, b=NULL, a.inds=NULL, b.inds=NULL, cutoff=5,
 \examples{
    \donttest{
     # PDB server connection required - testing excluded
+     try({
 
      pdb <- read.pdb('3dnd')
 
@@ -72,6 +73,11 @@ binding.site(a, b=NULL, a.inds=NULL, b.inds=NULL, cutoff=5,
      rec.inds <- atom.select(pdb, chain="A", resno=1:350)
      lig.inds <- atom.select(pdb, chain="A", resno=351)
      bs <- binding.site(pdb, a.inds=rec.inds, b.inds=lig.inds)
+
+     }, silent=TRUE)
+     if(inherits(.Last.value, "try-error")) {
+        message("Need internet to run the example")
+     }
    }
 
 
@@ -84,13 +90,16 @@ binding.site(a, b=NULL, a.inds=NULL, b.inds=NULL, cutoff=5,
 
    \donttest{
     # Redundant testing excluded
-
+    try({
+    
      # Interaction between two PDB entities   
      #rec <- read.pdb("receptor.pdb")
      #lig <- read.pdb("ligand.pdb")
      rec <- trim.pdb(pdb, inds=rec.inds)
      lig <- trim.pdb(pdb, inds=lig.inds)
      bs <- binding.site(rec, lig, hydrogens=FALSE)
+     
+     }, silent=TRUE)
    }
 }
 \keyword{ utilities }

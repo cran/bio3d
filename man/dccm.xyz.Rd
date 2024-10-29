@@ -81,6 +81,9 @@
   
 \examples{
 \donttest{
+if (!requireNamespace("lattice", quietly = TRUE)) {
+   message('Need lattice installed to run this example')
+} else {
 
 ##-- Read example trajectory file
 trtfile <- system.file("examples/hivp.dcd", package="bio3d")
@@ -103,8 +106,8 @@ cij <- dccm(xyz)
 plot(cij)
 
 ## Or
-library(lattice)
-contourplot(cij, region = TRUE, labels=FALSE, col="gray40",
+
+lattice::contourplot(cij, region = TRUE, labels=FALSE, col="gray40",
             at=c(-1, -0.75, -0.5, -0.25, 0.25, 0.5, 0.75, 1),
             xlab="Residue No.", ylab="Residue No.",
             main="DCCM: dynamic cross-correlation map")
@@ -116,7 +119,8 @@ cij <- dccm(xyz, method='lmi')
 #plot(cij)
 col.scale <- colorRampPalette(c("gray95", "cyan"))(5)
 plot(cij, at=seq(0.4,1, length=5), col.regions=col.scale)
-}
 
+}
+}
 }
 \keyword{ utilities }

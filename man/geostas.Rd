@@ -130,6 +130,7 @@ amsm.xyz(xyz, ncore = NULL)
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 #### NMR-ensemble example
 ## Read a multi-model PDB file 
@@ -148,6 +149,10 @@ xyz <- pdbfit(pdb, inds=domain.inds)
 
 #write.pdb(pdb, xyz=xyz, chain=gs$atomgrps)
 
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 
 \dontrun{

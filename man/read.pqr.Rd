@@ -78,6 +78,7 @@ read.pqr(file, maxlines = -1, multi = FALSE, rm.insert = FALSE,
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 # Read a PDB file and write it as a PQR file
 pdb <- read.pdb( "4q21" )
@@ -112,6 +113,10 @@ pqr$xyz[inds$xyz]
 
 ## See the help page for atom.select() function for more details.
 
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 \keyword{ IO }

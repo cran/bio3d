@@ -48,11 +48,17 @@ transformation matrices stored in a 'pdb' object returned by
 \examples{
 \donttest{
    # PDB server connection required - testing excluded
+   try({
 
    pdb <- read.pdb("2dn1")
    biounit <- biounit(pdb)
    pdb
    biounit
+
+   }, silent=TRUE)
+   if(inherits(.Last.value, "try-error")) {
+      message("Need internet to run the example")
+   }
 }
 \dontrun{
    biounit <- biounit(read.pdb("2bfu"), multi=TRUE)

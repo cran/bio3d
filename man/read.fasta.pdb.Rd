@@ -67,6 +67,7 @@ read.fasta.pdb(aln, prefix = "", pdbext = "", fix.ali = FALSE,
 \examples{
 \donttest{
 # Redundant testing excluded
+try({
 
 # Read sequence alignment
 file <- system.file("examples/kif1a.fa",package="bio3d")
@@ -92,6 +93,10 @@ pdbs$xyz[, atom2xyz(335:339)]
 # xyz <- fit.xyz(pdbs$xyz[1,], pdbs)
 # xyz[, atom2xyz(335:339)]
 
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 \keyword{ IO }

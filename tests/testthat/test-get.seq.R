@@ -3,7 +3,9 @@ context("Testing get.seq()")
 test_that("get.seq() works properly", {
   skip_on_cran()
   skip_on_travis()
-
+  skip_if_not(requireNamespace("httr", quietly=TRUE), 
+              message = "Need httr installed to run the test")
+  
   outfile <- tempfile()
   
   # NR
@@ -124,7 +126,7 @@ test_that("get.seq() works properly", {
   # EBI
   # All ids are wrong - choose wrong database
   ids <- c("1TAG_A", "1TND_B")
-  expect_error( capture.output(seqs <- get.seq(ids, outfile=outfile, db='uniprot')) )
+  expect_warning( capture.output(seqs <- get.seq(ids, outfile=outfile, db='uniprot')) )
    
   unlink(outfile)
 })

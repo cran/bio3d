@@ -263,5 +263,4 @@ please consult:
 ### For more information on SemVer, please visit http://semver.org/.
 
 
-# For changes prior to v1.1-6 (Apr 2013) please see the bio3d wki:
-## [Whats new wki page](http://bio3d.pbworks.com/w/page/7824486/WhatsNew)
+# For changes prior to v1.1-6 (Apr 2013), please contact Barry Grant: bjgrant@ucsd.edu.

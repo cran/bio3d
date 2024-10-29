@@ -50,6 +50,7 @@ get.pdb(ids, path = ".", URLonly=FALSE, overwrite = FALSE, gzip = FALSE,
 \examples{
 \donttest{
 # PDB server connection required - testing excluded
+try({
 
 ## PDB file paths
 get.pdb( c("1poo", "1moo"), URLonly=TRUE )
@@ -60,6 +61,11 @@ summary(pdb)
 
 ## Download PDB file
 ## get.pdb("5p21")
+
+}, silent=TRUE)
+if(inherits(.Last.value, "try-error")) {
+   message("Need internet to run the example")
+}
 }
 }
 \keyword{utilities}
